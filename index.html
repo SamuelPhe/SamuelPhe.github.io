@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio | Mahasiswa</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(120deg, #0f172a, #1e3a8a);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .hero a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 36px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    nav a {
+      padding: 16px 22px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== SECTION ===== */
+    section {
+      padding: 80px 10%;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 60px;
+      color: var(--primary);
+    }
+
+    /* ===== GRID CARD ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+      max-width: 800px;
+      margin: auto;
+      border-left: 4px solid var(--accent);
+      padding-left: 30px;
+    }
+
+    .timeline-item {
+      margin-bottom: 40px;
+    }
+
+    .timeline-item h3 {
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: #e5e7eb;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2.3rem; }
+      section { padding: 70px 6%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Nama Anda</h1>
+      <p>Mahasiswa | Portofolio Akademik, Organisasi, dan Profesional</p>
+      <a href="#kuliah">Lihat Portofolio</a>
+    </div>
+  </section>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="#kuliah">Kuliah</a></li>
+      <li><a href="#pengabdian">Pengabdian</a></li>
+      <li><a href="#organisasi">Organisasi</a></li>
+      <li><a href="#kerja">Pengalaman</a></li>
+      <li><a href="#prestasi">Prestasi</a></li>
+      <li><a href="#sertifikat">Sertifikat</a></li>
+    </ul>
+  </nav>
+
+  <!-- KULIAH -->
+  <section id="kuliah">
+    <h2>Portofolio Kuliah</h2>
+    <div class="grid">
+      <div class="card"><h3>Semester 1</h3><p>Tugas dan proyek dasar akademik.</p></div>
+      <div class="card"><h3>Semester 2</h3><p>Pengembangan keterampilan teknis.</p></div>
+      <div class="card"><h3>Semester 3</h3><p>Proyek terapan dan kolaboratif.</p></div>
+    </div>
+  </section>
+
+  <!-- PENGABDIAN -->
+  <section id="pengabdian">
+    <h2>Pengabdian Masyarakat</h2>
+    <div class="timeline">
+      <div class="timeline-item"><h3>Kegiatan Sosial</h3><p>Deskripsi singkat kegiatan.</p></div>
+    </div>
+  </section>
+
+  <!-- ORGANISASI -->
+  <section id="organisasi">
+    <h2>Organisasi</h2>
+    <div class="grid">
+      <div class="card"><h3>Organisasi Mahasiswa</h3><p>Peran dan kontribusi.</p></div>
+    </div>
+  </section>
+
+  <!-- KERJA -->
+  <section id="kerja">
+    <h2>Pengalaman Kerja</h2>
+    <div class="timeline">
+      <div class="timeline-item"><h3>Pengalaman 1</h3><p>Deskripsi pekerjaan.</p></div>
+    </div>
+  </section>
+
+  <!-- PRESTASI -->
+  <section id="prestasi">
+    <h2>Prestasi</h2>
+    <div class="grid">
+      <div class="card"><h3>Prestasi Akademik</h3><p>Detail prestasi.</p></div>
+    </div>
+  </section>
+
+  <!-- SERTIFIKAT -->
+  <section id="sertifikat">
+    <h2>Sertifikat</h2>
+    <div class="grid">
+      <div class="card"><h3>Pelatihan / Seminar</h3><p>Penyelenggara dan tahun.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 | Portofolio Pribadi</p>
+  </footer>
+
+</body>
+</html>
