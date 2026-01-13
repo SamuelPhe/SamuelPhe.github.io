@@ -157,6 +157,10 @@ footer {
 </ul>
 </nav>
 
+      <div class="hero-buttons">
+        <a href="index.html" class="btn btn-outline">Beranda</a>
+      </div>
+
 <section id="kuliah">
 <h2>Portofolio Tugas & Proyek Kuliah (3 Semester)</h2>
 <div class="grid">
