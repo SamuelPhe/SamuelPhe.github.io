@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Halo dari GitHub Pages</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; max-width: 720px; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; }
+    header { text-align:center; margin-bottom:2rem; }
+    a.button { display:inline-block; padding:0.5rem 1rem; background:#0366d6; color:white; border-radius:6px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Halo — ini website saya di GitHub Pages</h1>
+    <p>Diubah terakhir: <span id="date"></span></p>
+    <p><a class="button" href="https://github.com/">Lihat repo di GitHub</a></p>
+  </header>
+  <main>
+    <p>Selamat datang! Kamu bisa mengedit file ini (index.html) lalu push ke GitHub untuk memperbarui situs.</p>
+  </main>
+  <script>
+    document.getElementById('date').textContent = new Date().toLocaleString();
+  </script>
+</body>
+</html>
