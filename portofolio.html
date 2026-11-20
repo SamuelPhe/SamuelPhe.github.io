@@ -1,252 +1,148 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofolio Mahasiswa | Samuel</title>
-
-<style>
-:root {
-  --primary: #1e3c72;
-  --secondary: #2a5298;
-  --accent: #00c6ff;
-  --dark: #1f2933;
-  --light: #f4f7fb;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
-body {
-  background: var(--light);
-  color: var(--dark);
-  line-height: 1.6;
-}
-
-/* HEADER */
-header {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  padding: 70px 20px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2.8em;
-}
-
-header p {
-  margin-top: 10px;
-  font-size: 1.1em;
-  opacity: 0.9;
-}
-
-/* NAV */
-nav {
-  position: sticky;
-  top: 0;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
-  z-index: 100;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-nav ul li a {
-  display: block;
-  padding: 15px 20px;
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 600;
-}
-
-nav ul li a:hover {
-  color: var(--primary);
-}
-
-/* SECTION */
-section {
-  padding: 60px 10%;
-}
-
-section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2em;
-  color: var(--primary);
-}
-
-/* CARD GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 25px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  transition: transform .3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card h3 {
-  color: var(--secondary);
-  margin-bottom: 10px;
-}
-
-/* TIMELINE */
-.timeline {
-  border-left: 4px solid var(--accent);
-  padding-left: 30px;
-}
-
-.timeline-item {
-  margin-bottom: 30px;
-}
-
-.timeline-item h3 {
-  color: var(--secondary);
-}
-
-/* FOOTER */
-footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 25px;
-  margin-top: 50px;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  section {
-    padding: 50px 6%;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portofolio akademik Samuel, mahasiswa Sistem dan Teknologi Informasi ITBSS." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Portofolio Akademik | Samuel</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
+  <header class="hero" style="min-height:58vh">
+    <div class="hero-inner">
+      <span class="eyebrow">Proyek & Kegiatan Akademik</span>
+      <h1>Portofolio Samuel</h1>
+      <p>Kumpulan tugas, proyek perkuliahan, pengalaman penelitian, dan sertifikat yang pernah saya ikuti selama proses pembelajaran.</p>
+      <div class="hero-buttons">
+        <a href="index.html" class="btn btn-outline">Kembali ke Beranda</a>
+        <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+      </div>
+    </div>
+  </header>
 
-<header>
-  <h1>Samuel</h1>
-  <p>24110019 | Sistem dan Teknologi Informasi | Institut Teknologi dan Bisnis</p>
-</header>
+  <nav aria-label="Navigasi portofolio">
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="#proyek">Tugas & Proyek</a></li>
+      <li><a href="#publikasi">Publikasi</a></li>
+      <li><a href="#sertifikat">Sertifikat</a></li>
+      <li><a href="index.html#kontak">Kontak</a></li>
+    </ul>
+  </nav>
 
-<nav>
-<ul>
-  <li><a href="index.html">Beranda</a></li>
-  <li><a href="#kuliah">Kuliah</a></li>
-  <li><a href="#pengabdian">Pengabdian</a></li>
-  <li><a href="#organisasi">Organisasi</a></li>
-  <li><a href="#kerja">Pengalaman Kerja</a></li>
-  <li><a href="#prestasi">Prestasi</a></li>
-  <li><a href="#sertifikat">Sertifikat</a></li>
-</ul>
-</nav>
+  <main>
+    <section id="proyek">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Tugas & Proyek Perkuliahan</h2>
+          <p>Beberapa tugas dan proyek yang tercatat dalam perjalanan pembelajaran di Program Studi Sistem dan Teknologi Informasi ITBSS.</p>
+        </div>
+        <div class="notice">Catatan: Proyek pemrograman dikerjakan sebagai latihan akademik. Dalam proses pengkodean, saya menggunakan bantuan AI, tutorial, atau arahan dosen. Daftar ini menunjukkan pengalaman mengerjakan proyek, bukan klaim penguasaan mandiri seluruh teknologi yang digunakan.</div>
+        <div class="grid">
+          <article class="card project-card">
+            <span class="kicker">Proyek Sekolah</span>
+            <h3>Karya Tulis Ilmiah</h3>
+            <p>Proyek kelompok mata pelajaran Bahasa Indonesia yang melibatkan koordinasi tim, pencatatan dan pengolahan data, serta penyusunan hasil penelitian.</p>
+            <div class="project-type">Penelitian & penulisan</div>
+          </article>
+          <article class="card project-card">
+            <span class="kicker">Semester 1</span>
+            <h3>Desain Kartu Tanda Mahasiswa</h3>
+            <p>Tugas desain akademik untuk membuat rancangan kartu identitas mahasiswa.</p>
+            <div class="project-type">Desain grafis</div>
+          </article>
+          <article class="card project-card">
+            <span class="kicker">Semester 1</span>
+            <h3>Poster Bertema Cyber Security</h3>
+            <p>Tugas pembuatan poster dengan tema keamanan siber.</p>
+            <div class="project-type">Desain & literasi teknologi</div>
+          </article>
+          <article class="card project-card">
+            <span class="kicker">Semester 2</span>
+            <h3>Aplikasi CRUD Berbasis Web</h3>
+            <p>Latihan membuat aplikasi web dengan fungsi dasar Create, Read, Update, dan Delete.</p>
+            <div class="project-type">Web development · praktik dengan bantuan</div>
+          </article>
+          <article class="card project-card">
+            <span class="kicker">Semester 2</span>
+            <h3>Aplikasi POS (Point of Sale)</h3>
+            <p>Proyek aplikasi kasir sebagai bagian dari latihan pengembangan aplikasi berbasis web.</p>
+            <div class="project-type">Aplikasi bisnis · praktik dengan bantuan</div>
+          </article>
+          <article class="card project-card">
+            <span class="kicker">Semester 3</span>
+            <h3>Sistem Informasi Berbasis Web</h3>
+            <p>Proyek perkuliahan untuk menerapkan konsep sistem informasi dalam aplikasi berbasis web.</p>
+            <div class="project-type">Information systems · praktik dengan bantuan</div>
+          </article>
+          <article class="card project-card">
+            <span class="kicker">Semester 3</span>
+            <h3>Aplikasi Inventaris</h3>
+            <p>Proyek aplikasi untuk mendukung pencatatan dan pengelolaan data inventaris.</p>
+            <div class="project-type">Aplikasi data · praktik dengan bantuan</div>
+          </article>
+          <article class="card project-card">
+            <span class="kicker">Semester 3</span>
+            <h3>Filter TikTok Bertema PMB ITBSS</h3>
+            <p>Proyek pembuatan filter TikTok dengan tema Penerimaan Mahasiswa Baru ITBSS.</p>
+            <div class="project-type">Digital creation</div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section id="publikasi" class="section-alt">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Publikasi Ilmiah</h2>
+          <p>Publikasi bersama tim yang tercatat pada jurnal TECHBUS.</p>
+        </div>
+        <article class="card publication">
+          <span class="kicker">Co-Author · 2026</span>
+          <h3>Sistem Pendukung Keputusan Pemilihan Metode Penyimpanan File Tugas Mahasiswa IT Menggunakan Metode TOPSIS</h3>
+          <p class="authors">Davent Gravando, Marsha Marthalina, Samuel, dan Wendy Lo.</p>
+          <p>TECHBUS (Technology Business and Entrepreneurship), Vol. 4, No. 1 (2026), hlm. 48–62.</p>
+          <p>Penelitian menggunakan kombinasi metode Rank Order Centroid (ROC) dan TOPSIS untuk membantu pemilihan layanan penyimpanan cloud berdasarkan sejumlah kriteria.</p>
+          <div class="actions">
+            <a class="btn btn-dark" href="https://doi.org/10.61245/techbus.v4i1.88" target="_blank" rel="noopener noreferrer">Buka DOI publikasi</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<section id="kuliah">
-<h2>Portofolio Tugas & Proyek Kuliah (3 Semester)</h2>
-<div class="grid">
-  <div class="card">
-    <h3>Semester 1</h3>
-    <p>• Membuat Karya Tulis Ilmiah<br>
-       • Membuat Desain Kartu Tanda Mahasiswa <br>
-       • Membuat Poster Bertema Cyber Security </p>
-  </div>
-  <div class="card">
-    <h3>Semester 2</h3>
-    <p>• Membuat Aplikasi CRUD Berbasis Web <br>
-       • Membuat Aplikasi POS (Point of Sale) <br>
-       •  - </p>
-  </div>
-  <div class="card">
-    <h3>Semester 3</h3>
-    <p>• Membuat Sistem Informasi Berbasis Web<br>
-       • Membuat Aplikasi Inventaris<br>
-       • Membuat Filter Tiktok Bertema PMB ITBSS </p>
-  </div>
-</div>
-</section>
+    <section id="sertifikat">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Sertifikat Pelatihan & Seminar</h2>
+          <p>Sertifikat yang sebelumnya telah dicantumkan pada halaman portofolio.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>English Level Test (3 Skills)</h3>
+            <p>Pearson Education · 2025</p>
+            <iframe class="certificate-frame" src="https://drive.google.com/file/d/1M8yOXHbOE5Bn7dt-M2uHyaoi-DOUURr0/preview" title="Pratinjau sertifikat English Level Test" loading="lazy" allow="autoplay"></iframe>
+            <div class="actions">
+              <a class="btn btn-light" href="https://drive.google.com/file/d/1M8yOXHbOE5Bn7dt-M2uHyaoi-DOUURr0/view" target="_blank" rel="noopener noreferrer">Buka sertifikat</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Talk Show: “Kebahagiaan, Pilihan atau Takdir?”</h3>
+            <p>Nalanda Foundation · 2025</p>
+            <iframe class="certificate-frame" src="https://drive.google.com/file/d/1BcRTIsMCHYfnEQyNk1Vh33jDZowt0at6/preview" title="Pratinjau sertifikat talk show" loading="lazy" allow="autoplay"></iframe>
+            <div class="actions">
+              <a class="btn btn-light" href="https://drive.google.com/file/d/1BcRTIsMCHYfnEQyNk1Vh33jDZowt0at6/view" target="_blank" rel="noopener noreferrer">Buka sertifikat</a>
+            </div>
+          </article>
+        </div>
+        <p class="small-note" style="text-align:center;margin-top:18px">Jika pratinjau tidak muncul, periksa pengaturan berbagi file di Google Drive atau gunakan tautan “Buka sertifikat”.</p>
+      </div>
+    </section>
+  </main>
 
-<section id="pengabdian">
-<h2>Pengabdian Kepada Masyarakat</h2>
-<div class="timeline">
-  <div class="timeline-item">
-    <h3>xx</h3>
-    <p>xx</p>
-  </div>
-</div>
-</section>
-
-<section id="organisasi">
-<h2>Kegiatan Organisasi</h2>
-<div class="grid">
-  <div class="card">
-    <h3>Himpunan Mahasiswa</h3>
-    <p>xx – xx</p>
-  </div>
-</div>
-</section>
-
-<section id="kerja">
-<h2>Pengalaman Kerja & Pekerjaan Sekarang</h2>
-<div class="timeline">
-  <div class="timeline-item">
-    <h3>Accounting - PT Dangau Selaras</h3>
-    <p>Menyiapkan Laporan Gaji.</p>
-    <p>Menyiapkan Laporan Rekening Koran.</p>
-    <p>Melaksanakan Transaksi di Bank.</p>
-    <p>Melaksanakan Transaksi di e-katalog v6/Inaproc.</p>
-    <p>Mengecek Bukti Pembayaran Tamu.</p>
-  </div>
-</div>
-</section>
-
-<section id="prestasi">
-<h2>Prestasi</h2>
-<div class="grid">
-  <div class="card">
-    <h3>Juara / Finalis</h3>
-    <p>Lomba Akademik / Non-Akademik</p>
-  </div>
-</div>
-</section>
-
-<section id="sertifikat">
-<h2>Sertifikat Pelatihan & Seminar</h2>
-<div class="grid">
-  <div class="card">
-    <h3>English Level Test (3 Skills)</h3>
-    <p>Pearson Education | 2025</p>
-    <iframe src="https://drive.google.com/file/d/1M8yOXHbOE5Bn7dt-M2uHyaoi-DOUURr0/view?usp=sharing" width="100%" height="500px" style="border:none;"></iframe>
-  </div>
-  <div class="card">
-    <h3>Talk Show bertema "Kebahagiaan, Pilihan atau Takdir?"</h3>
-    <p>Nalanda Foundation | 2025</p>
-    <iframe src="https://drive.google.com/file/d/1BcRTIsMCHYfnEQyNk1Vh33jDZowt0at6/view?usp=sharing" width="100%" height="500px" style="border:none;"></iframe>
-  </div>
-</div>
-</section>
-<footer>
-  <p>© 2026 Nama Anda | Portofolio Akademik</p>
-</footer>
-
+  <footer>
+    <p>© 2026 Samuel · Portofolio Akademik</p>
+    <p style="margin-top:6px"><a href="index.html">Kembali ke halaman utama</a></p>
+  </footer>
 </body>
 </html>

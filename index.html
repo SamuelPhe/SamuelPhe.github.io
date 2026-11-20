@@ -3,280 +3,267 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samuel | Website & Portofolio</title>
-
-  <style>
-    :root {
-      --primary: #0f172a;
-      --secondary: #1e40af;
-      --accent: #38bdf8;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #020617;
-      --muted: #64748b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", system-ui, sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    /* ===== HERO ===== */
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(120deg, var(--primary), var(--secondary));
-      color: white;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-
-    header p {
-      max-width: 720px;
-      margin: auto;
-      font-size: 1.15rem;
-      opacity: 0.9;
-    }
-
-    .hero-buttons {
-      margin-top: 35px;
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 36px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #020617;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(56,189,248,0.4);
-    }
-
-    .btn-outline {
-      border: 2px solid var(--accent);
-      color: var(--accent);
-    }
-
-    .btn-outline:hover {
-      background: var(--accent);
-      color: #020617;
-    }
-
-    /* ===== NAV ===== */
-    nav {
-      position: sticky;
-      top: 0;
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      z-index: 100;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      padding: 16px 22px;
-      display: block;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: var(--secondary);
-    }
-
-    /* ===== SECTION ===== */
-    section {
-      padding: 90px 10%;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 55px;
-      color: var(--primary);
-    }
-
-    /* ===== GRID ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card h3 {
-      color: var(--secondary);
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* ===== TIMELINE ===== */
-    .timeline {
-      max-width: 820px;
-      margin: auto;
-      border-left: 4px solid var(--accent);
-      padding-left: 30px;
-    }
-
-    .timeline-item {
-      margin-bottom: 40px;
-    }
-
-    .timeline-item h3 {
-      color: var(--secondary);
-      margin-bottom: 5px;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--primary);
-      color: #e5e7eb;
-      text-align: center;
-      padding: 45px 20px;
-    }
-
-    footer p {
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.3rem; }
-      section { padding: 80px 6%; }
-    }
-  </style>
+  <meta name="description" content="Portofolio Samuel, mahasiswa Sistem dan Teknologi Informasi ITBSS dengan pengalaman administrasi keuangan, personalia, serta proyek akademik teknologi." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Samuel | Profil & Portofolio</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
-
-  <!-- HERO -->
-  <header>
-    <div>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Profil Akademik & Profesional</span>
       <h1>Samuel</h1>
-      <p>
-        Mahasiswa Sistem Informasi yang berfokus pada pengembangan sistem,
-        teknologi informasi, serta pengabdian dan pengembangan diri secara akademik dan profesional.
-      </p>
+      <p>Mahasiswa Sistem dan Teknologi Informasi di Institut Teknologi & Bisnis Sabda Setia (ITBSS) Pontianak. Memiliki pengalaman di bidang accounting, administrasi keuangan, dan administrasi personalia, serta ketertarikan pada pengembangan sistem dan teknologi informasi.</p>
+      <div class="hero-meta">Information Systems & Technology · Finance & Administration</div>
       <div class="hero-buttons">
-        <a href="portofolio.html" class="btn btn-outline">Lihat Portofolio</a>
+        <a href="portofolio.html" class="btn btn-primary">Lihat Portofolio Akademik</a>
+        <a href="#kontak" class="btn btn-outline">Hubungi Saya</a>
       </div>
     </div>
   </header>
 
-  <!-- NAV -->
-  <nav>
+  <nav aria-label="Navigasi utama">
     <ul>
       <li><a href="#profil">Profil</a></li>
+      <li><a href="#pendidikan">Pendidikan</a></li>
       <li><a href="#keahlian">Keahlian</a></li>
       <li><a href="#pengalaman">Pengalaman</a></li>
+      <li><a href="#publikasi">Publikasi</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
       <li><a href="#kontak">Kontak</a></li>
     </ul>
   </nav>
 
-  <!-- PROFIL -->
-  <section id="profil">
-    <h2>Profil Singkat</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Tentang Saya</h3>
-        <p>
-          Saya adalah mahasiswa yang memiliki minat pada bidang sistem informasi,
-          pengembangan web, dan teknologi berbasis cloud. Terbiasa bekerja secara
-          mandiri maupun tim dalam proyek akademik dan organisasi.
-        </p>
+  <main>
+    <section id="profil">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Profil Singkat</h2>
+          <p>Latar belakang pendidikan, pengalaman kerja, dan minat pengembangan diri.</p>
+        </div>
+        <div class="info-grid">
+          <article class="info-panel">
+            <span class="kicker">Tentang Saya</span>
+            <h3>Akademik dan Profesional</h3>
+            <p>Saya merupakan mahasiswa Sistem dan Teknologi Informasi di ITBSS Pontianak. Saya memiliki pengalaman kerja sebagai Accounting Staff di industri perhotelan dengan tanggung jawab tambahan pada administrasi personalia.</p>
+            <p>Dalam pekerjaan, saya terbiasa menangani administrasi keuangan, persiapan dokumen payroll, pemantauan transaksi perbankan, pencatatan piutang, administrasi pengadaan melalui e-Katalog/INAPROC, serta administrasi BPJS Ketenagakerjaan dan BPJS Kesehatan.</p>
+            <p>Di bidang akademik, saya telah mempelajari dasar pemrograman, basis data, analisis sistem, UI/UX, jaringan komputer, statistika, serta metode penelitian. Saya juga pernah terlibat dalam proyek akademik dan publikasi jurnal bersama tim.</p>
+          </article>
+          <aside class="info-panel">
+            <span class="kicker">Fokus Saat Ini</span>
+            <h3>Bidang yang Saya Kembangkan</h3>
+            <div class="tag-list">
+              <span class="tag">Information Systems</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">Software Engineering</span>
+              <span class="tag">Finance Administration</span>
+              <span class="tag">Personnel Administration</span>
+              <span class="tag">Research & Data</span>
+            </div>
+            <p class="small-note" style="margin-top:16px">Daftar bidang ini menggambarkan area pembelajaran dan pengalaman, bukan klaim bahwa seluruhnya telah dikuasai secara profesional.</p>
+          </aside>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- KEAHLIAN -->
-  <section id="keahlian">
-    <h2>Keahlian</h2>
-    <div class="grid">
-      <div class="card"><h3>Web Development</h3><p>HTML, CSS, JavaScript</p></div>
-      <div class="card"><h3>Basis Data</h3><p>MySQL, Perancangan Database</p></div>
-      <div class="card"><h3>Cloud & Virtualisasi</h3><p>VirtualBox, Linux Server</p></div>
-    </div>
-  </section>
+    <section id="pendidikan" class="section-alt">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Riwayat Pendidikan</h2>
+          <p>Pendidikan formal dan bidang pembelajaran yang relevan.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Institut Teknologi & Bisnis Sabda Setia (ITBSS), Pontianak</h3>
+            <div class="date">2024 – Sekarang</div>
+            <p>Program Studi Sistem dan Teknologi Informasi.</p>
+            <p class="small-note">Bidang pembelajaran dalam kurikulum mencakup algoritma dan pemrograman, struktur data, sistem basis data, pemrograman web, analisis dan perancangan sistem informasi, desain pengalaman pengguna, jaringan komputer, komputasi awan, kecerdasan buatan, statistika, dan metodologi penelitian.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>SMA Gembala Baik, Pontianak</h3>
+            <div class="date">2021 – 2024</div>
+            <p>Jurusan Ilmu Pengetahuan Sosial (IPS).</p>
+            <p class="small-note">Mata pelajaran yang relevan: Ekonomi, TIK, Matematika, dan Bahasa Indonesia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <!-- PENGALAMAN -->
-  <section id="pengalaman">
-    <h2>Pengalaman</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Asisten Laboratorium</h3>
-        <p>Membantu praktikum dan pendampingan mahasiswa.</p>
+    <section id="keahlian">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Keahlian & Pengalaman Tools</h2>
+          <p>Ditampilkan berdasarkan pengalaman kerja dan pembelajaran. Tingkat pengalaman dicantumkan agar tidak menyamakan praktik terbimbing dengan penguasaan mandiri.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="kicker">Pengalaman Kerja</span>
+            <h3>Administrasi Keuangan</h3>
+            <p>Pengalaman dalam pekerjaan administrasi keuangan dan operasional perbankan.</p>
+            <div class="tag-list">
+              <span class="tag">Financial Administration</span><span class="tag">Accounts Receivable</span><span class="tag">Payroll Administration</span><span class="tag">Internet Banking</span><span class="tag">Invoice Processing</span>
+            </div>
+            <span class="level good">Pengalaman kerja langsung</span>
+          </article>
+          <article class="card">
+            <span class="kicker">Pengalaman Kerja</span>
+            <h3>Administrasi Personalia & Pengadaan</h3>
+            <p>Administrasi kepesertaan BPJS, pembaruan data karyawan, dan transaksi pengadaan elektronik.</p>
+            <div class="tag-list">
+              <span class="tag">Human Resources Administration</span><span class="tag">SIPP</span><span class="tag">EDABU</span><span class="tag">E-Procurement</span><span class="tag">INAPROC</span><span class="tag">Document Management</span>
+            </div>
+            <span class="level good">Pengalaman kerja langsung</span>
+          </article>
+          <article class="card">
+            <span class="kicker">Aplikasi Perkantoran</span>
+            <h3>Pengolahan Data & Dokumen</h3>
+            <p>Menggunakan aplikasi perkantoran untuk pengolahan data, penyusunan dokumen, dan pekerjaan administrasi.</p>
+            <div class="tag-list">
+              <span class="tag">Microsoft Excel</span><span class="tag">Microsoft Word</span><span class="tag">Google Docs</span><span class="tag">Google Sheets</span><span class="tag">Microsoft PowerPoint</span>
+            </div>
+            <span class="level good">Excel dan Google Docs digunakan secara mandiri</span>
+          </article>
+          <article class="card">
+            <span class="kicker">Tools Pengembangan</span>
+            <h3>Development Tools</h3>
+            <p>Menggunakan perangkat pengembangan untuk membuka dan mengelola proyek, menjalankan aplikasi, serta mengelola repository.</p>
+            <div class="tag-list">
+              <span class="tag">Visual Studio Code</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">SQLyog</span>
+            </div>
+            <span class="level good">Praktik langsung</span>
+          </article>
+          <article class="card">
+            <span class="kicker">Akademik & Praktik Terbimbing</span>
+            <h3>Web & Programming Foundations</h3>
+            <p>Pernah mempraktikkan teknologi berikut dalam proyek akademik. Penulisan dan perubahan kode banyak dibantu AI, tutorial, atau arahan dosen; pemahaman kode masih terus dikembangkan.</p>
+            <div class="tag-list">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Bootstrap</span><span class="tag">Python</span><span class="tag">C++</span><span class="tag">OOP</span>
+            </div>
+            <span class="level basic">Praktik dengan bantuan</span>
+          </article>
+          <article class="card">
+            <span class="kicker">Akademik & Praktik Terbimbing</span>
+            <h3>Database, System Design & Networking</h3>
+            <p>Pernah berlatih membuat database dan menjalankan query dasar, menyusun diagram sistem, serta melakukan simulasi jaringan dengan panduan.</p>
+            <div class="tag-list">
+              <span class="tag">SQL</span><span class="tag">CRUD Queries</span><span class="tag">Use Case Diagram</span><span class="tag">Activity Diagram</span><span class="tag">Sequence Diagram</span><span class="tag">Cisco Packet Tracer</span>
+            </div>
+            <span class="level basic">Praktik dengan panduan</span>
+          </article>
+          <article class="card">
+            <span class="kicker">Riset & Pengolahan Data</span>
+            <h3>Statistika dan Penelitian</h3>
+            <p>Pernah mengolah statistik deskriptif, membuat tabel dan grafik, menjalankan regresi, mencari referensi ilmiah, mengumpulkan data, dan menulis laporan penelitian.</p>
+            <div class="tag-list">
+              <span class="tag">IBM SPSS</span><span class="tag">Statistical Analysis</span><span class="tag">Quantitative Research</span><span class="tag">Research Projects</span><span class="tag">Regression</span>
+            </div>
+            <span class="level basic">Praktik dasar; interpretasi regresi masih dikembangkan</span>
+          </article>
+          <article class="card">
+            <span class="kicker">Desain & Proyek Akademik</span>
+            <h3>UI/UX dan Game</h3>
+            <p>Pernah membuat desain menggunakan Figma dan mengumpulkan data pengguna melalui kuesioner. Juga pernah membuat game sederhana dengan Scratch menggunakan tutorial.</p>
+            <div class="tag-list">
+              <span class="tag">Figma</span><span class="tag">UI/UX Design</span><span class="tag">User Research</span><span class="tag">Scratch</span><span class="tag">CorelDRAW</span>
+            </div>
+            <span class="level basic">Praktik dasar dan terbimbing</span>
+          </article>
+          <article class="card">
+            <span class="kicker">Soft Skill</span>
+            <h3>Kerja Tim</h3>
+            <p>Terbiasa berkoordinasi dengan anggota kelompok, membantu anggota lain, dan menyelesaikan masalah bersama dalam kegiatan akademik.</p>
+            <div class="tag-list"><span class="tag">Teamwork</span></div>
+            <span class="level good">Pengalaman akademik dan kerja</span>
+          </article>
+        </div>
       </div>
-      <div class="timeline-item">
-        <h3>Organisasi Mahasiswa</h3>
-        <p>Aktif dalam kegiatan dan kepanitiaan kampus.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- KONTAK -->
-  <section id="kontak">
-    <h2>Kontak</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Hubungi Saya</h3>
-        <p>Email: samuelptk2006@gmail.com<br>
-           GitHub: github.com/SamuelPhe<br>
-           Discord: https://discord.com/users/518212369063608331 <br>
-           LinkedIn: linkedin.com/in/samuelphang06</p>
+    <section id="pengalaman" class="section-alt">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Pengalaman Kerja</h2>
+          <p>Pengalaman profesional di bidang accounting dengan tanggung jawab tambahan pada administrasi personalia dan pengadaan.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Accounting Staff — PT Dangau Selaras (Dangau Hotel Kubu Raya)</h3>
+            <div class="date">Mei 2024 – Maret 2026</div>
+            <p class="small-note">Tugas tambahan: Administrasi Personalia</p>
+            <h4 class="subheading">Administrasi Keuangan dan Perbankan</h4>
+            <ul>
+              <li>Menyiapkan laporan gaji berdasarkan data hari kerja dan potongan yang diberikan HRD.</li>
+              <li>Menyiapkan file payroll untuk pembayaran melalui Internet Banking (termasuk Qlola) atau teller bank.</li>
+              <li>Memantau transaksi uang masuk dan saldo pada beberapa akun Internet Banking perusahaan.</li>
+              <li>Mengunduh, memeriksa, dan mencetak rekening koran atau mutasi rekening.</li>
+              <li>Membuat transaksi sebagai Maker sesuai kewenangan yang diberikan dan melakukan transaksi melalui teller bank.</li>
+            </ul>
+            <h4 class="subheading">Administrasi Piutang dan Invoice</h4>
+            <ul>
+              <li>Memeriksa bukti pembayaran tamu dan mencatat piutang.</li>
+              <li>Mengidentifikasi pembayaran piutang pada rekening koran dan melaporkannya kepada pihak terkait.</li>
+              <li>Menindaklanjuti status pembayaran melalui koordinasi dengan tim Marketing, khususnya piutang dari tamu instansi pemerintahan.</li>
+              <li>Mengantarkan invoice kepada pihak terkait untuk mendukung proses penagihan.</li>
+            </ul>
+            <h4 class="subheading">Administrasi Pengadaan</h4>
+            <ul>
+              <li>Membuat dan mengelola data produk pada e-Katalog v6/INAPROC.</li>
+              <li>Memproses transaksi pembelian dan mengunggah dokumen pendukung.</li>
+              <li>Melakukan pembelian Tanda Tangan Elektronik (TTE) dan meterai elektronik.</li>
+            </ul>
+            <h4 class="subheading">Administrasi Personalia</h4>
+            <ul>
+              <li>Mengelola administrasi kepesertaan BPJS Ketenagakerjaan melalui SIPP dan BPJS Kesehatan melalui EDABU.</li>
+              <li>Mendaftarkan karyawan baru dan menonaktifkan kepesertaan BPJS karyawan yang telah berhenti bekerja.</li>
+              <li>Memperbarui data karyawan dan informasi upah atau gaji.</li>
+              <li>Mengelola administrasi iuran atau pembayaran BPJS serta memeriksa status kepesertaan.</li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="publikasi">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Publikasi Ilmiah</h2>
+          <p>Publikasi penelitian bersama tim di bidang sistem pendukung keputusan.</p>
+        </div>
+        <article class="card publication">
+          <span class="kicker">Co-Author · TECHBUS · 2026</span>
+          <h3>Sistem Pendukung Keputusan Pemilihan Metode Penyimpanan File Tugas Mahasiswa IT Menggunakan Metode TOPSIS</h3>
+          <p class="authors">Davent Gravando, Marsha Marthalina, Samuel, dan Wendy Lo.</p>
+          <p>TECHBUS (Technology Business and Entrepreneurship), Vol. 4, No. 1 (2026), hlm. 48–62. Penelitian ini menggunakan kombinasi metode Rank Order Centroid (ROC) dan TOPSIS untuk mengevaluasi alternatif layanan penyimpanan cloud bagi mahasiswa IT.</p>
+          <div class="actions">
+            <a class="btn btn-dark" href="https://doi.org/10.61245/techbus.v4i1.88" target="_blank" rel="noopener noreferrer">Baca publikasi</a>
+            <a class="btn btn-light" href="https://ejournal.itbss.ac.id/index.php/techbus/article/view/88" target="_blank" rel="noopener noreferrer">Lihat laman jurnal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="kontak" class="section-alt">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Kontak</h2>
+          <p>Silakan hubungi saya melalui email atau kunjungi profil profesional dan GitHub saya.</p>
+        </div>
+        <div class="card contact-card">
+          <h3>Samuel</h3>
+          <p>Mahasiswa Sistem dan Teknologi Informasi · ITBSS Pontianak</p>
+          <div class="contact-links">
+            <a href="mailto:samuelptk2006@gmail.com">Email</a>
+            <a href="https://github.com/SamuelPhe" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/samuelphang06" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://discord.com/users/518212369063608331" target="_blank" rel="noopener noreferrer">Discord</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2026 Samuel • Website Pribadi & Portofolio</p>
+    <p>© 2026 Samuel · Website Pribadi & Portofolio</p>
   </footer>
-
 </body>
 </html>
