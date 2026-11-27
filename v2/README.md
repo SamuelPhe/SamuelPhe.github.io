@@ -1,0 +1,26 @@
+# Samuel Phe — Portfolio v2
+
+An alternate personal portfolio site, published separately from the original homepage.
+
+- **Live path (after GitHub Pages finishes publishing):** https://samuelphe.github.io/v2/
+- **Original portfolio:** https://samuelphe.github.io/
+- **Source:** `v2/index.html`, `v2/styles.css`, and `v2/script.js`
+
+## Design notes
+
+This version uses an original editorial direction: warm paper surfaces, deep charcoal sections, a lime accent, typographic layouts, and CSS-drawn project illustrations. The references supplied for the redesign were used only as broad inspiration for presentation quality and interaction; their layouts, copy, and assets were not reproduced.
+
+## Features
+
+- Responsive navigation for desktop and mobile
+- Project filters (All, Web, Desktop) and a shortcut to research
+- Keyboard command palette using `Ctrl/Cmd + K`
+- Local time display for West Kalimantan (Asia/Pontianak)
+- Scroll reveal effects with reduced-motion support
+- No frontend framework or build step required
+
+## Editing
+
+Update the content in `index.html`, presentation in `styles.css`, and interactions in `script.js`. All illustrations are drawn with CSS and HTML; no third-party project screenshots are embedded.
+
+The original root-level `index.html`, `portofolio.html`, and `style.css` are intentionally unchanged.
