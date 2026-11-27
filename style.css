@@ -77,6 +77,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .btn-primary:hover { background: #7dd3fc; }
 .btn-outline { border-color: rgba(125,211,252,.9); color: #e0f2fe; }
 .btn-outline:hover { background: rgba(56,189,248,.13); }
+.btn-version { border-color: rgba(255,255,255,.72); color: #fff; background: rgba(255,255,255,.08); }
+.btn-version:hover { background: rgba(255,255,255,.18); box-shadow: 0 10px 22px rgba(15,23,42,.16); }
 
 nav {
   position: sticky;
