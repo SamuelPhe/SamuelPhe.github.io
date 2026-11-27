@@ -8,13 +8,13 @@ An alternate personal portfolio site, published separately from the original hom
 
 ## Design notes
 
-This version uses an original editorial direction: warm paper surfaces, deep charcoal sections, a lime accent, typographic layouts, and CSS-drawn project illustrations. The references supplied for the redesign were used only as broad inspiration for presentation quality and interaction; their layouts, copy, and assets were not reproduced.
+This version uses an original editorial direction: warm paper surfaces, deep charcoal sections, a restrained burgundy and coral-red accent, typographic layouts, and CSS-drawn project illustrations. The references supplied for the redesign were used only as broad inspiration for presentation quality and interaction; their layouts, copy, and assets were not reproduced.
 
 ## Features
 
 - Responsive navigation for desktop and mobile
-- Project filters (All, Web, Desktop) and a shortcut to research
-- Keyboard command palette using `Ctrl/Cmd + K`
+- Project filters (All, Web, Desktop, Research)
+- Keyboard command palette using `Ctrl/Cmd + K`, with arrow-key navigation and an empty-search state
 - Local time display for West Kalimantan (Asia/Pontianak)
 - Scroll reveal effects with reduced-motion support
 - No frontend framework or build step required
