@@ -24,3 +24,8 @@ This version uses an original editorial direction: warm paper surfaces, deep cha
 Update the content in `index.html`, presentation in `styles.css`, and interactions in `script.js`. All illustrations are drawn with CSS and HTML; no third-party project screenshots are embedded.
 
 The original root-level `index.html`, `portofolio.html`, and `style.css` are intentionally unchanged.
+
+
+## Profile information
+
+The profile content includes the supplied LinkedIn details for education, employment, languages, and IMPHNEN membership. The contact phone number is intentionally not published on the portfolio; the email and professional profile links remain available. Blender is listed as a tool the owner has used, without claiming professional mastery.
