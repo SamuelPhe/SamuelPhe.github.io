@@ -3,11 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#121510">
+  <meta name="theme-color" content="#171311">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://samuelphe.github.io/v2/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="description" content="Portofolio personal Samuel Phe — mahasiswa Sistem dan Teknologi Informasi, pembelajar web development, dan pembuat proyek digital.">
   <meta property="og:title" content="Samuel Phe — Personal Portfolio">
   <meta property="og:description" content="Belajar lewat ide. Berkembang lewat proyek.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://samuelphe.github.io/v2/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Samuel Phe — Personal Portfolio">
+  <meta name="twitter:description" content="Belajar lewat ide. Berkembang lewat proyek.">
   <title>Samuel Phe — Personal Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +39,7 @@
       <a href="#work">Karya <span>01</span></a>
       <a href="#about">Tentang <span>02</span></a>
       <a href="#toolkit">Toolkit <span>03</span></a>
-      <a href="#notes">Catatan <span>04</span></a>
+      <a href="#notes">Riset <span>04</span></a>
       <a class="nav-contact" href="#contact">Kontak <span>↗</span></a>
     </nav>
 
@@ -104,14 +111,15 @@
 
       <div class="project-toolbar">
         <div class="filter-list" role="group" aria-label="Filter proyek">
-          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Semua <span>06</span></button>
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Semua <span>07</span></button>
           <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button>
           <button class="filter-button" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
           <button class="filter-button" type="button" data-filter="research" aria-pressed="false">Riset</button>
         </div>
-        <span class="project-count"><b id="visible-count">06</b> PROYEK DITAMPILKAN</span>
+        <span class="project-count" aria-live="polite" aria-atomic="true"><b id="visible-count">07</b> PROYEK DITAMPILKAN</span>
       </div>
 
+      <p class="project-illustration-note"><span>✳</span> Ilustrasi di setiap kartu adalah visual konseptual yang dibuat untuk portofolio, bukan tangkapan layar aplikasi yang sedang berjalan.</p>
       <div class="project-grid" id="project-grid">
         <article class="project-card project-featured reveal" data-category="web">
           <div class="project-visual visual-store" aria-hidden="true">
@@ -127,10 +135,10 @@
             <div class="visual-stamp">IN<br>BUILD</div>
           </div>
           <div class="project-details">
-            <div class="project-meta"><span>PERSONAL PROJECT</span><span class="status status-progress"><i></i> ACTIVE DEVELOPMENT</span></div>
+            <div class="project-meta"><span>PERSONAL PROJECT</span><span class="status status-review"><i></i> BUSINESS REVIEW</span></div>
             <h3>ShiyeStore</h3>
-            <p>Platform storefront dan top-up digital berbasis Laravel. Saya mengembangkan alur katalog, transaksi, pengelolaan admin, dan integrasi operasional sambil mengevaluasi kesiapan produknya.</p>
-            <div class="tech-list"><span>Laravel</span><span>Vue 3</span><span>Inertia</span><span>TypeScript</span><span>MySQL</span></div>
+            <p>Platform storefront dan top-up digital berbasis Laravel. Pengembangan fitur sedang dijeda untuk menilai kelayakan bisnis melalui harga pemasok, harga jual, biaya pembayaran, margin, dan ketersediaan produk.</p>
+            <div class="tech-list"><span>PHP</span><span>Laravel 12</span><span>Vue 3</span><span>Inertia 2</span><span>TypeScript</span><span>Tailwind CSS</span><span>MySQL</span></div>
             <p class="project-footnote">Source code utama bersifat privat; belum ada demo publik yang disiapkan.</p>
           </div>
         </article>
@@ -186,10 +194,10 @@
 
         <article class="project-card reveal" data-category="desktop">
           <div class="project-visual visual-ventra" aria-hidden="true">
-            <div class="visual-label">04 / INVENTORY MANAGEMENT</div>
+            <div class="visual-label">04 / INVENTORY MANAGEMENT · SAMPLE UI</div>
             <div class="inventory-board">
               <div class="inventory-head"><span>VENTRA / STOCKROOM</span><b>▦</b></div>
-              <div class="inventory-total"><small>TOTAL ITEMS</small><strong>1,248</strong><span>INVENTORY OVERVIEW</span></div>
+              <div class="inventory-total"><small>ILLUSTRATIVE COUNT</small><strong>1,248</strong><span>FICTIONAL SAMPLE DATA</span></div>
               <div class="inventory-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
               <div class="inventory-rows"><i></i><i></i><i></i></div>
             </div>
@@ -205,9 +213,9 @@
 
         <article class="project-card reveal" data-category="web">
           <div class="project-visual visual-edusched" aria-hidden="true">
-            <div class="visual-label">05 / SCHEDULING WEB APP</div>
+            <div class="visual-label">05 / SCHEDULING WEB APP · SAMPLE UI</div>
             <div class="calendar-board">
-              <div class="calendar-title"><span>EXAM SCHEDULE</span><b>OCT / 2026</b></div>
+              <div class="calendar-title"><span>EXAM SCHEDULE</span><b>DEMO VIEW</b></div>
               <div class="calendar-grid"><i>MON</i><i>TUE</i><i>WED</i><i>THU</i><i>FRI</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i><i>19</i><i>20</i><i>21</i><i>22</i><i>23</i><i>26</i><i>27</i><i>28</i><i>29</i><i>30</i></div>
               <div class="calendar-event">MATHEMATICS / 08:00</div>
             </div>
@@ -223,9 +231,9 @@
 
         <article class="project-card reveal" data-category="web">
           <div class="project-visual visual-pos" aria-hidden="true">
-            <div class="visual-label">06 / POINT OF SALE</div>
+            <div class="visual-label">06 / POINT OF SALE · SAMPLE UI</div>
             <div class="pos-window">
-              <div class="pos-head"><span>COUNTER / CHECKOUT</span><b>● LIVE</b></div>
+              <div class="pos-head"><span>COUNTER / CHECKOUT</span><b>● UI MOCKUP</b></div>
               <div class="pos-item"><i>01</i><span>Product A</span><b>Rp 35.000</b></div>
               <div class="pos-item"><i>02</i><span>Product B</span><b>Rp 48.000</b></div>
               <div class="pos-item"><i>03</i><span>Product C</span><b>Rp 22.000</b></div>
@@ -241,9 +249,28 @@
             <a class="project-link" href="https://github.com/SamuelPhe/POS-pwd-semester2" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
           </div>
         </article>
+
+        <article class="project-card reveal" data-category="research">
+          <div class="project-visual visual-research-card" aria-hidden="true">
+            <div class="visual-label">07 / DECISION SUPPORT RESEARCH</div>
+            <div class="research-preview">
+              <span class="preview-kicker">TECHBUS / 2026</span>
+              <div class="preview-equation"><span>ROC</span><i>×</i><span>TOPSIS</span></div>
+              <div class="preview-rank"><b>01</b><i></i><b>02</b><i></i><b>03</b></div>
+              <span class="preview-caption">CLOUD STORAGE / ALTERNATIVE RANKING</span>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="project-meta"><span>CO-AUTHOR · VOL. 4 NO. 1</span><span class="status status-academic">PUBLICATION</span></div>
+            <h3>ROC–TOPSIS Decision Support</h3>
+            <p>Penelitian kolaboratif untuk mengevaluasi alternatif layanan penyimpanan cloud bagi mahasiswa IT melalui pembobotan ROC dan pemeringkatan TOPSIS.</p>
+            <div class="tech-list"><span>Research</span><span>ROC</span><span>TOPSIS</span><span>Decision Support</span></div>
+            <a class="project-link" href="https://doi.org/10.61245/techbus.v4i1.88" target="_blank" rel="noopener noreferrer">Baca publikasi <span>↗</span></a>
+          </div>
+        </article>
       </div>
 
-      <div class="empty-state" id="empty-state" hidden>Tidak ada proyek pada kategori ini.</div>
+      <div class="empty-state" id="empty-state" role="status" hidden>Tidak ada proyek pada kategori ini.</div>
       <div class="work-bottomline"><span>END OF CURRENT SELECTION</span><span>MORE TO LEARN, MORE TO BUILD <b>↗</b></span></div>
     </section>
 
@@ -378,7 +405,7 @@
     <div class="command-box">
       <div class="command-heading"><span id="command-title">QUICK NAVIGATION</span><kbd>ESC</kbd></div>
       <label class="command-input-wrap"><span>⌕</span><input id="command-input" type="search" placeholder="Cari bagian halaman..." autocomplete="off"></label>
-      <div class="command-results" id="command-results">
+      <div class="command-results" id="command-results" role="list">
         <a href="#work"><span>01</span> Karya dan proyek <kbd>↵</kbd></a>
         <a href="#about"><span>02</span> Tentang saya <kbd>↵</kbd></a>
         <a href="#toolkit"><span>03</span> Toolkit <kbd>↵</kbd></a>
@@ -386,6 +413,7 @@
         <a href="#contact"><span>05</span> Kontak <kbd>↵</kbd></a>
         <a href="https://github.com/SamuelPhe" target="_blank" rel="noopener noreferrer"><span>↗</span> GitHub profile <kbd>↵</kbd></a>
       </div>
+      <p class="command-no-results" id="command-no-results" role="status" hidden>Tidak ada bagian yang cocok. Coba kata kunci lain.</p>
       <div class="command-foot"><span>TIP: TEKAN CTRL + K KAPAN SAJA</span><span>ESC UNTUK MENUTUP</span></div>
     </div>
   </dialog>
