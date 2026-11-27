@@ -174,3 +174,6 @@ if (commandInput && commandLinks.length) {
 commandDialog?.addEventListener("click", (event) => {
   if (event.target === commandDialog) commandDialog.close();
 });
+
+const copyrightYear = document.getElementById("copyright-year");
+if (copyrightYear) copyrightYear.textContent = String(new Date().getFullYear());
