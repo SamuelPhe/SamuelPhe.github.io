@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121510">
+  <meta name="description" content="Portofolio personal Samuel Phe — mahasiswa Sistem dan Teknologi Informasi, pembelajar web development, dan pembuat proyek digital.">
+  <meta property="og:title" content="Samuel Phe — Personal Portfolio">
+  <meta property="og:description" content="Belajar lewat ide. Berkembang lewat proyek.">
+  <meta property="og:type" content="website">
+  <title>Samuel Phe — Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati navigasi</a>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Samuel Phe, kembali ke atas">
+      <span class="brand-mark">S<span>.</span></span>
+      <span class="brand-name">SAMUEL PHE<small>PERSONAL ARCHIVE / 2026</small></span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Buka navigasi">
+      <span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
+      <a href="#work">Karya <span>01</span></a>
+      <a href="#about">Tentang <span>02</span></a>
+      <a href="#toolkit">Toolkit <span>03</span></a>
+      <a href="#notes">Catatan <span>04</span></a>
+      <a class="nav-contact" href="#contact">Kontak <span>↗</span></a>
+    </nav>
+
+    <button class="command-trigger" type="button" data-open-command aria-label="Buka pencarian cepat">
+      <span>⌕</span><kbd>CTRL K</kbd>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="hero-cross cross-one" aria-hidden="true">＋</div>
+      <div class="hero-cross cross-two" aria-hidden="true">✳</div>
+
+      <div class="hero-content">
+        <div class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> PORTOFOLIO DIGITAL / SAMUEL PHE</div>
+        <h1 id="hero-title">Belajar lewat ide.<br><em>Berkembang</em> lewat proyek.</h1>
+        <p class="hero-copy">Saya Samuel. Mahasiswa Sistem dan Teknologi Informasi yang senang memahami cara kerja sesuatu, lalu mencoba membangunnya menjadi aplikasi yang berguna.</p>
+        <div class="hero-actions">
+          <a class="button button-lime" href="#work">Jelajahi proyek <span>↘</span></a>
+          <a class="text-link light-link" href="#about">Kenali saya <span>↗</span></a>
+        </div>
+
+        <div class="hero-bottomline">
+          <div><span class="micro-label">BERBASIS DI</span><strong>Sungai Raya, Indonesia</strong></div>
+          <div><span class="micro-label">PERAN SAAT INI</span><strong>Student <i>×</i> Accounting Staff</strong></div>
+          <div><span class="micro-label">WAKTU LOKAL</span><strong id="local-time">--:--:-- WIB</strong></div>
+        </div>
+      </div>
+
+      <aside class="identity-card" aria-label="Ringkasan aktivitas">
+        <div class="identity-card-top"><span>FIELD NOTES / 001</span><span class="live-mark"><i></i> ACTIVE</span></div>
+        <div class="identity-symbol" aria-hidden="true">
+          <span class="symbol-ring ring-a"></span>
+          <span class="symbol-ring ring-b"></span>
+          <span class="symbol-core">S.</span>
+          <span class="symbol-spark">✳</span>
+        </div>
+        <div class="identity-card-body">
+          <span class="micro-label">CURRENTLY EXPLORING</span>
+          <h2>Web systems<br>& practical tools.</h2>
+          <p>Mengubah rasa ingin tahu menjadi eksperimen kecil, lalu belajar dari prosesnya.</p>
+        </div>
+        <div class="identity-card-foot"><span>WEST KALIMANTAN</span><span>0°02' S / 109°20' E</span></div>
+      </aside>
+
+      <div class="hero-index" aria-hidden="true">INDEPENDENT<br>BY CURIOSITY <span>✳</span></div>
+    </section>
+
+    <section class="intro-strip" aria-label="Ringkasan">
+      <p>BUKAN SEKADAR MENULIS KODE — <span>SAYA SEDANG BELAJAR MEMECAHKAN MASALAH.</span></p>
+      <div class="strip-mark">✳</div>
+      <p>BUILD / LEARN / REFINE <span>— REPEAT.</span></p>
+    </section>
+
+    <section class="work-section section-pad" id="work" aria-labelledby="work-title">
+      <div class="section-topline">
+        <span class="section-index">01 / SELECTED WORK</span>
+        <span class="section-side-note">Kumpulan eksperimen dan proyek pilihan</span>
+      </div>
+      <div class="section-heading-row">
+        <div>
+          <h2 id="work-title">Hal yang pernah<br><em>saya bangun.</em></h2>
+        </div>
+        <p>Mulai dari aplikasi web, sistem desktop, sampai eksplorasi ide. Setiap proyek punya tujuan dan proses belajarnya sendiri.</p>
+      </div>
+
+      <div class="project-toolbar">
+        <div class="filter-list" role="group" aria-label="Filter proyek">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Semua <span>06</span></button>
+          <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter-button" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
+          <button class="filter-button" type="button" data-filter="research" aria-pressed="false">Riset</button>
+        </div>
+        <span class="project-count"><b id="visible-count">06</b> PROYEK DITAMPILKAN</span>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <article class="project-card project-featured reveal" data-category="web">
+          <div class="project-visual visual-store" aria-hidden="true">
+            <div class="visual-label">01 / DIGITAL STOREFRONT</div>
+            <div class="store-window">
+              <div class="window-bar"><i></i><i></i><i></i><span>shiyestore / storefront</span></div>
+              <div class="store-screen">
+                <div class="store-top"><b>SHIYE<span>STORE.</span></b><small>DISCOVER DIGITAL GOODS</small></div>
+                <div class="store-copy"><span>YOUR NEXT<br>GAME STARTS HERE.</span><b>→</b></div>
+                <div class="store-products"><i>GAME</i><i>VOUCHER</i><i>TOP UP</i></div>
+              </div>
+            </div>
+            <div class="visual-stamp">IN<br>BUILD</div>
+          </div>
+          <div class="project-details">
+            <div class="project-meta"><span>PERSONAL PROJECT</span><span class="status status-progress"><i></i> ACTIVE DEVELOPMENT</span></div>
+            <h3>ShiyeStore</h3>
+            <p>Platform storefront dan top-up digital berbasis Laravel. Saya mengembangkan alur katalog, transaksi, pengelolaan admin, dan integrasi operasional sambil mengevaluasi kesiapan produknya.</p>
+            <div class="tech-list"><span>Laravel</span><span>Vue 3</span><span>Inertia</span><span>TypeScript</span><span>MySQL</span></div>
+            <a class="project-link" href="https://github.com/SamuelPhe/ShiyeStore-Showcase" target="_blank" rel="noopener noreferrer">Lihat project showcase <span>↗</span></a>
+            <span class="project-footnote">Source code utama bersifat privat.</span>
+          </div>
+        </article>
+
+        <article class="project-card project-featured reveal" data-category="web">
+          <div class="project-visual visual-bukti" aria-hidden="true">
+            <div class="visual-label">02 / IMAGE ANALYSIS EXPERIMENT</div>
+            <div class="receipt-stage">
+              <div class="receipt-sheet">
+                <div class="receipt-brand">TRANSFER RECEIPT <span>•••</span></div>
+                <div class="receipt-rule"></div>
+                <span class="receipt-caption">TOTAL TRANSFER</span>
+                <strong>Rp 250.000</strong>
+                <div class="receipt-rule short"></div>
+                <div class="receipt-line"></div><div class="receipt-line"></div><div class="receipt-line small"></div>
+                <div class="receipt-check">?</div>
+              </div>
+              <div class="scan-frame"></div>
+              <div class="scan-tag">SIGNAL SCAN / 01</div>
+            </div>
+            <div class="visual-orbit-dot"></div>
+          </div>
+          <div class="project-details">
+            <div class="project-meta"><span>PERSONAL R&amp;D</span><span class="status status-progress"><i></i> EARLY STAGE</span></div>
+            <h3>BuktiScope</h3>
+            <p>Eksperimen local-first untuk memeriksa gambar bukti transfer dan menampilkan sinyal yang layak ditinjau manusia. Fokusnya transparansi analisis, bukan klaim deteksi palsu yang pasti.</p>
+            <div class="tech-list"><span>Python</span><span>OCR</span><span>Image Analysis</span><span>FastAPI</span></div>
+            <a class="project-link" href="https://github.com/SamuelPhe/BuktiScope" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="desktop">
+          <div class="project-visual visual-krs" aria-hidden="true">
+            <div class="visual-label">03 / ACADEMIC SYSTEM</div>
+            <div class="academic-window">
+              <div class="academic-sidebar"><b>KRS<span>.</span></b><i></i><i></i><i></i><i></i></div>
+              <div class="academic-main">
+                <small>STUDENT PORTAL / OVERVIEW</small>
+                <strong>Academic<br>dashboard.</strong>
+                <div class="academic-widgets"><i></i><i></i><i></i></div>
+                <div class="academic-table"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="project-meta"><span>SEMESTER 4 / TEAM PROJECT</span><span class="status status-academic">ACADEMIC</span></div>
+            <h3>KRS Academic System</h3>
+            <p>Aplikasi desktop untuk alur pengajuan KRS, pemilihan jadwal, pemeriksaan bentrok, peninjauan Dosen PA, dan finalisasi oleh Kaprodi.</p>
+            <div class="tech-list"><span>Java</span><span>Java Swing</span><span>MySQL</span><span>JDBC</span></div>
+            <a class="project-link" href="https://github.com/SamuelPhe/krs_pbo2_semester4" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="desktop">
+          <div class="project-visual visual-ventra" aria-hidden="true">
+            <div class="visual-label">04 / INVENTORY MANAGEMENT</div>
+            <div class="inventory-board">
+              <div class="inventory-head"><span>VENTRA / STOCKROOM</span><b>▦</b></div>
+              <div class="inventory-total"><small>TOTAL ITEMS</small><strong>1,248</strong><span>INVENTORY OVERVIEW</span></div>
+              <div class="inventory-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="inventory-rows"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="project-meta"><span>SEMESTER 3 / TEAM PROJECT</span><span class="status status-academic">ACADEMIC</span></div>
+            <h3>Ventra Inventory</h3>
+            <p>Aplikasi inventaris desktop untuk pencatatan produk, penyesuaian stok, barang masuk dan keluar, serta informasi pengiriman.</p>
+            <div class="tech-list"><span>Java 17</span><span>Java Swing</span><span>MySQL</span><span>Maven</span></div>
+            <a class="project-link" href="https://github.com/SamuelPhe/ventra-inventaris-pbo-semester3" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="web">
+          <div class="project-visual visual-edusched" aria-hidden="true">
+            <div class="visual-label">05 / SCHEDULING WEB APP</div>
+            <div class="calendar-board">
+              <div class="calendar-title"><span>EXAM SCHEDULE</span><b>OCT / 2026</b></div>
+              <div class="calendar-grid"><i>MON</i><i>TUE</i><i>WED</i><i>THU</i><i>FRI</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i><i>19</i><i>20</i><i>21</i><i>22</i><i>23</i><i>26</i><i>27</i><i>28</i><i>29</i><i>30</i></div>
+              <div class="calendar-event">MATHEMATICS / 08:00</div>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="project-meta"><span>SEMESTER 3 / TEAM PROJECT</span><span class="status status-academic">ACADEMIC</span></div>
+            <h3>EduSched</h3>
+            <p>Aplikasi web penjadwalan ujian untuk mengatur jadwal, aktivitas guru, berkas soal, manajemen pengguna, dan laporan.</p>
+            <div class="tech-list"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
+            <a class="project-link" href="https://github.com/SamuelPhe/apsi-semester3" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="web">
+          <div class="project-visual visual-pos" aria-hidden="true">
+            <div class="visual-label">06 / POINT OF SALE</div>
+            <div class="pos-window">
+              <div class="pos-head"><span>COUNTER / CHECKOUT</span><b>● LIVE</b></div>
+              <div class="pos-item"><i>01</i><span>Product A</span><b>Rp 35.000</b></div>
+              <div class="pos-item"><i>02</i><span>Product B</span><b>Rp 48.000</b></div>
+              <div class="pos-item"><i>03</i><span>Product C</span><b>Rp 22.000</b></div>
+              <div class="pos-total"><span>TOTAL</span><strong>Rp 105.000</strong></div>
+              <div class="pos-pay">COMPLETE SALE ↗</div>
+            </div>
+          </div>
+          <div class="project-details">
+            <div class="project-meta"><span>SEMESTER 2 / COURSE PROJECT</span><span class="status status-academic">ACADEMIC</span></div>
+            <h3>Point of Sale</h3>
+            <p>Aplikasi kasir berbasis web dengan area admin dan kasir, manajemen produk dan stok, transaksi penjualan, serta riwayat transaksi.</p>
+            <div class="tech-list"><span>PHP</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="project-link" href="https://github.com/SamuelPhe/POS-pwd-semester2" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="empty-state" id="empty-state" hidden>Tidak ada proyek pada kategori ini.</div>
+      <div class="work-bottomline"><span>END OF CURRENT SELECTION</span><span>MORE TO LEARN, MORE TO BUILD <b>↗</b></span></div>
+    </section>
+
+    <section class="about-section section-pad" id="about" aria-labelledby="about-title">
+      <div class="section-topline">
+        <span class="section-index">02 / A LITTLE ABOUT ME</span>
+        <span class="section-side-note">Di balik proyek dan layar</span>
+      </div>
+      <div class="about-layout">
+        <div class="about-heading">
+          <span class="overline">HALO, SENANG BERTEMU.</span>
+          <h2 id="about-title">Masih belajar.<br><em>Tetap membangun.</em></h2>
+          <div class="about-seal" aria-hidden="true"><span>CURIOUS<br>BY NATURE</span><b>✳</b></div>
+        </div>
+        <div class="about-copy">
+          <p class="about-lead">Saya mahasiswa Sistem dan Teknologi Informasi di Institut Teknologi & Bisnis Sabda Setia (ITBSS), sekaligus bekerja sebagai Accounting Staff di industri perhotelan.</p>
+          <p>Saya tertarik pada bagaimana teknologi bisa membantu pekerjaan sehari-hari. Di luar pekerjaan, saya mengerjakan proyek akademik dan personal untuk mengenal proses pengembangan software secara lebih nyata—mulai dari merancang alur, mengelola data, sampai mencoba membuat aplikasi berjalan.</p>
+          <p>Saya belum menganggap diri saya ahli. Sebagian besar pengalaman coding saya berkembang lewat tugas kuliah, dokumentasi, eksplorasi mandiri, dan bantuan AI. Karena itu, saya berusaha menampilkan apa yang benar-benar pernah saya kerjakan, sekaligus hal-hal yang masih perlu saya pelajari.</p>
+
+          <div class="about-details">
+            <div><span class="micro-label">PENDIDIKAN</span><strong>Sistem & Teknologi Informasi</strong><small>ITBSS · Pontianak</small></div>
+            <div><span class="micro-label">PEKERJAAN</span><strong>Accounting Staff</strong><small>PT Dangau Selaras</small></div>
+            <div><span class="micro-label">LOKASI</span><strong>Kalimantan Barat</strong><small>Indonesia · UTC+7</small></div>
+            <div><span class="micro-label">BAHASA</span><strong>Bahasa Indonesia</strong><small>English · B1+ (Pearson test)</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="operations-section section-pad" aria-labelledby="operations-title">
+      <div class="section-topline">
+        <span class="section-index">A DIFFERENT PERSPECTIVE</span>
+        <span class="section-side-note">Teknologi bertemu operasional</span>
+      </div>
+      <div class="operations-layout">
+        <div>
+          <h2 id="operations-title">Saya juga belajar<br>di luar <em>baris kode.</em></h2>
+          <p class="operations-intro">Pekerjaan sehari-hari memberi saya sudut pandang lain tentang sistem: ketelitian data, alur persetujuan, pencatatan, dan proses yang harus bisa dipertanggungjawabkan.</p>
+        </div>
+        <div class="operations-list">
+          <div><span>01</span><p><b>Administrasi keuangan</b><small>Payroll preparation, pemeriksaan transaksi bank, dan rekonsiliasi informasi pembayaran.</small></p><i>↗</i></div>
+          <div><span>02</span><p><b>Accounts receivable</b><small>Pencatatan piutang, pemeriksaan bukti pembayaran, invoice, dan tindak lanjut.</small></p><i>↗</i></div>
+          <div><span>03</span><p><b>Pengadaan & administrasi</b><small>Pengelolaan data produk dan dokumen pendukung pada e-Katalog v6 / INAPROC.</small></p><i>↗</i></div>
+          <div><span>04</span><p><b>Administrasi BPJS</b><small>Pembaruan data dan administrasi kepesertaan melalui SIPP dan EDABU.</small></p><i>↗</i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolkit-section section-pad" id="toolkit" aria-labelledby="toolkit-title">
+      <div class="section-topline">
+        <span class="section-index">03 / TOOLS & TECHNOLOGIES</span>
+        <span class="section-side-note">Yang pernah saya gunakan</span>
+      </div>
+      <div class="section-heading-row">
+        <h2 id="toolkit-title">Toolkit <em>yang terus tumbuh.</em></h2>
+        <p>Teknologi dan tools dari proyek akademik, pekerjaan, dan eksplorasi personal. Tingkat pengalaman tiap alat tidak sama.</p>
+      </div>
+      <div class="toolkit-grid">
+        <article class="toolkit-card">
+          <span class="toolkit-number">01</span>
+          <div><h3>Web development</h3><p>Digunakan dalam proyek web dan aplikasi personal.</p></div>
+          <div class="tool-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span><span>Vue 3</span><span>Inertia.js</span><span>Bootstrap</span></div>
+        </article>
+        <article class="toolkit-card">
+          <span class="toolkit-number">02</span>
+          <div><h3>Programming & desktop</h3><p>Dipakai dalam latihan pemrograman dan tugas kuliah.</p></div>
+          <div class="tool-tags"><span>Java</span><span>Java Swing</span><span>Python</span><span>C++</span><span>OOP</span><span>Maven</span></div>
+        </article>
+        <article class="toolkit-card">
+          <span class="toolkit-number">03</span>
+          <div><h3>Database & workflow</h3><p>Pengelolaan data dan alur kerja aplikasi.</p></div>
+          <div class="tool-tags"><span>MySQL</span><span>SQL</span><span>JDBC</span><span>Git</span><span>GitHub</span><span>VS Code</span></div>
+        </article>
+        <article class="toolkit-card">
+          <span class="toolkit-number">04</span>
+          <div><h3>Office & data</h3><p>Tools yang digunakan pada pekerjaan administrasi dan tugas akademik.</p></div>
+          <div class="tool-tags"><span>Excel</span><span>Google Sheets</span><span>Word</span><span>PowerPoint</span><span>SPSS</span><span>Mendeley</span></div>
+        </article>
+      </div>
+      <p class="toolkit-note"><span>✳</span> Daftar ini menunjukkan pengalaman penggunaan, bukan klaim bahwa saya telah menguasai semua tools pada tingkat profesional.</p>
+    </section>
+
+    <section class="notes-section section-pad" id="notes" aria-labelledby="notes-title">
+      <div class="section-topline">
+        <span class="section-index">04 / NOTES & RESEARCH</span>
+        <span class="section-side-note">Satu catatan yang dipublikasikan</span>
+      </div>
+      <div class="research-card">
+        <div class="research-art" aria-hidden="true">
+          <span class="research-art-kicker">RESEARCH / 2026</span>
+          <div class="research-symbol"><span>R</span><i>↗</i></div>
+          <span class="research-art-bottom">ROC × TOPSIS<br>DECISION SUPPORT</span>
+        </div>
+        <div class="research-content">
+          <span class="overline">CO-AUTHOR · TECHBUS VOL. 4 NO. 1</span>
+          <h2 id="notes-title">Sistem Pendukung Keputusan Pemilihan Metode Penyimpanan File Tugas Mahasiswa IT Menggunakan Metode TOPSIS</h2>
+          <p>Penelitian kolaboratif mengenai pemilihan layanan penyimpanan cloud untuk mahasiswa IT, menggunakan pembobotan ROC dan pemeringkatan alternatif TOPSIS.</p>
+          <div class="research-meta"><span>Davent Gravando</span><span>Marsha Marthalina</span><span>Samuel</span><span>Wendy Lo</span></div>
+          <a class="project-link" href="https://doi.org/10.61245/techbus.v4i1.88" target="_blank" rel="noopener noreferrer">Baca publikasi / DOI <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section-pad" id="contact" aria-labelledby="contact-title">
+      <div class="contact-decoration" aria-hidden="true">✳</div>
+      <div class="section-topline">
+        <span class="section-index">05 / SAY HELLO</span>
+        <span class="section-side-note">Terbuka untuk percakapan dan kolaborasi</span>
+      </div>
+      <div class="contact-content">
+        <span class="overline">SAMPAI JUMPA DI INTERNET.</span>
+        <h2 id="contact-title">Punya ide?<br><em>Mari terhubung.</em></h2>
+        <p>Saya senang bertukar pikiran tentang teknologi, proyek, pembelajaran, dan hal-hal yang sedang dibangun.</p>
+        <a class="contact-email" href="mailto:samuelptk2006@gmail.com">samuelptk2006@gmail.com <span>↗</span></a>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/SamuelPhe" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+        <a href="https://www.linkedin.com/in/samuelphang06" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
+        <a href="https://www.researchgate.net/profile/Samuel-Samuel-35" target="_blank" rel="noopener noreferrer">ResearchGate <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#top">S<span>.</span></a>
+    <p>Dirancang dan dirawat dengan rasa ingin tahu.</p>
+    <span>© 2026 SAMUEL PHE</span>
+    <a class="back-top" href="#top" aria-label="Kembali ke atas">↑</a>
+  </footer>
+
+  <dialog class="command-dialog" id="command-dialog" aria-labelledby="command-title">
+    <div class="command-box">
+      <div class="command-heading"><span id="command-title">QUICK NAVIGATION</span><kbd>ESC</kbd></div>
+      <label class="command-input-wrap"><span>⌕</span><input id="command-input" type="search" placeholder="Cari bagian halaman..." autocomplete="off"></label>
+      <div class="command-results" id="command-results">
+        <a href="#work"><span>01</span> Karya dan proyek <kbd>↵</kbd></a>
+        <a href="#about"><span>02</span> Tentang saya <kbd>↵</kbd></a>
+        <a href="#toolkit"><span>03</span> Toolkit <kbd>↵</kbd></a>
+        <a href="#notes"><span>04</span> Riset dan publikasi <kbd>↵</kbd></a>
+        <a href="#contact"><span>05</span> Kontak <kbd>↵</kbd></a>
+        <a href="https://github.com/SamuelPhe" target="_blank" rel="noopener noreferrer"><span>↗</span> GitHub profile <kbd>↵</kbd></a>
+      </div>
+      <div class="command-foot"><span>TIP: TEKAN CTRL + K KAPAN SAJA</span><span>ESC UNTUK MENUTUP</span></div>
+    </div>
+  </dialog>
+</body>
+</html>
