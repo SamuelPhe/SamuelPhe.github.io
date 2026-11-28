@@ -10,14 +10,16 @@ if (menuToggle && mainNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Buka navigasi" : "Tutup navigasi");
+    menuToggle.setAttribute("aria-label", isOpen
+      ? (currentLanguage === "en" ? "Open navigation" : "Buka navigasi")
+      : (currentLanguage === "en" ? "Close navigation" : "Tutup navigasi"));
     mainNav.classList.toggle("is-open", !isOpen);
   });
 
   const closeMobileNav = () => {
     mainNav.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Buka navigasi");
+    menuToggle.setAttribute("aria-label", currentLanguage === "en" ? "Open navigation" : "Buka navigasi");
   };
   mainNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMobileNav));
   document.addEventListener("keydown", (event) => {
@@ -340,7 +342,7 @@ function openProjectNote(key, trigger) {
     projectDialogLink.hidden = true;
     projectDialogLink.removeAttribute("href");
   }
-  projectDialog.showModal();
+  if (!projectDialog.open) projectDialog.showModal();
 }
 document.querySelectorAll("[data-project-open]").forEach((button) => {
   button.addEventListener("click", () => openProjectNote(button.dataset.projectOpen, button));
