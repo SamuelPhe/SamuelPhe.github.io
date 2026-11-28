@@ -1138,3 +1138,125 @@ body { background: var(--lab-paper); }
   .lab-mode, .flow-project, .flow-stage, .skill-filter, .project-explore span { transition: none !important; }
 }
 
+/* Contrast repair and bilingual header controls */
+.header-tools {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}
+.language-switch {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid rgba(244,162,155,.38);
+  background: rgba(255,255,255,.045);
+}
+.language-option {
+  min-width: 31px;
+  min-height: 29px;
+  padding: 5px 7px;
+  border: 1px solid transparent;
+  color: #f2dddd;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  transition: color .18s, background .18s, border-color .18s;
+}
+.language-option:hover { color: #fff; border-color: rgba(244,162,155,.55); }
+.language-option.is-active {
+  border-color: #d97879;
+  color: #fff;
+  background: #8f292f;
+}
+.language-option:focus-visible { outline: 2px solid #ffd5d2; outline-offset: 3px; }
+
+.site-header .brand-name small { color: #d8caca; }
+.site-header .main-nav a { color: rgba(255,250,248,.92); }
+.site-header .main-nav a span { color: rgba(255,250,248,.68); }
+.site-header .command-trigger { color: #fff1ef; border-color: rgba(255,230,226,.42); }
+.site-header .command-trigger kbd { color: #ffe2df; border-color: rgba(255,230,226,.48); }
+.site-header .version-switch {
+  color: #ffe1dd;
+  border-color: rgba(255,205,199,.72);
+  background: rgba(166,46,50,.24);
+}
+.site-header .version-switch span { color: #fff; }
+.site-header .version-switch:hover { color: #fff; border-color: #fff; background: rgba(166,46,50,.58); }
+
+/* Project preview captions were white on pale illustrations; give them a readable label surface. */
+.project-visual .visual-label {
+  top: 14px;
+  left: 15px;
+  max-width: calc(100% - 30px);
+  padding: 6px 8px;
+  border: 1px solid rgba(50,37,37,.16);
+  color: #33272a;
+  background: rgba(255,250,244,.94);
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .08em;
+  box-shadow: 0 2px 8px rgba(31,20,22,.08);
+}
+.status-progress { color: #4c601b; }
+.project-meta { color: #5b504d; }
+.project-count { color: #514643; }
+.project-footnote { color: #514643; }
+.project-illustration-note { color: #514643; }
+.profile-extra-top { color: #5c4c49; }
+.profile-timeline small, .about-details small, .profile-extra-note { color: #554744; }
+.language-list b { color: #554542; }
+.membership-card .profile-extra-top { color: rgba(255,244,241,.84); }
+.membership-card .profile-extra-note { color: rgba(255,244,241,.82); }
+.research-meta span { color: #514b42; }
+.experience-role small { color: rgba(255,247,243,.84); }
+
+/* Dark sections: improve all informational small text to readable contrast. */
+.system-map-section .section-side-note { color: rgba(255,247,244,.86); }
+.system-map-section .section-heading-row p { color: rgba(255,247,244,.82); }
+.flow-project { color: rgba(255,247,244,.86); }
+.flow-project small { color: rgba(255,242,239,.82); }
+.flow-workspace-top { color: rgba(255,247,244,.82); }
+.flow-stage { color: rgba(255,247,244,.88); }
+.flow-stage i { color: rgba(255,247,244,.72); }
+.flow-inspector-mark { color: rgba(244,162,155,.58); }
+.flow-inspector p { color: rgba(255,247,244,.84); }
+.flow-inspector-note { color: #ffb8b1; }
+.flow-disclaimer { color: rgba(255,247,244,.78); }
+.console-topbar { color: rgba(255,247,244,.82); }
+.lab-mode { color: rgba(255,247,244,.86); }
+.lab-mode span { color: #ffbcb6; }
+.lab-display p { color: rgba(255,247,244,.84); }
+.console-foot { color: rgba(255,247,244,.82); }
+.console-foot b { color: #e2efc7; }
+.project-dialog-top, .project-dialog-bottom { color: rgba(255,247,244,.82); }
+.project-dialog-description, .project-dialog-grid p { color: rgba(255,247,244,.86); }
+.contact-section .section-side-note { color: rgba(255,247,244,.82); }
+.contact-content > p { color: rgba(255,247,244,.82); }
+.site-footer { color: rgba(255,247,244,.8); }
+
+/* Keep focus indicators visible on both light and dark sections. */
+.language-option:focus-visible, .header-tools a:focus-visible { outline-offset: 3px; }
+@media (max-width: 1050px) {
+  .header-tools { gap: 6px; }
+  .language-option { min-width: 29px; padding-right: 6px; padding-left: 6px; }
+}
+@media (max-width: 780px) {
+  .site-header { gap: 12px; }
+  .header-tools { margin-left: auto; }
+  .command-trigger { margin-left: 0; }
+}
+@media (max-width: 560px) {
+  .site-header { gap: 8px; padding-right: 12px; padding-left: 12px; }
+  .header-tools { gap: 6px; }
+  .language-switch { padding: 2px; }
+  .language-option { min-width: 27px; min-height: 28px; padding: 4px 5px; font-size: 8px; }
+  .version-switch { margin-left: 0; padding: 6px 8px; font-size: 8px; }
+}
+
