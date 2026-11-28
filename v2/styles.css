@@ -338,6 +338,27 @@ kbd {
 }
 .project-card:hover { border-color: rgba(23,26,21,.42); box-shadow: 0 15px 38px rgba(23,26,21,.08); transform: translateY(-4px); }
 .project-card[hidden] { display: none !important; }
+.project-more-wrap { display: flex; justify-content: center; margin: 28px 0 2px; }
+.project-more {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 18px;
+  border: 1px solid rgba(23,26,21,.32);
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+.project-more::after { content: "↓"; color: var(--red); font-size: 15px; transition: transform .2s ease; }
+.project-more[aria-expanded="true"]::after { content: "↑"; }
+.project-more:hover { border-color: var(--ink); color: var(--paper-light); background: var(--ink); }
+.project-more:hover::after { color: var(--red-light); }
+.project-more:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
 .project-visual { position: relative; display: grid; min-height: 250px; place-items: center; overflow: hidden; isolation: isolate; }
 .visual-label { position: absolute; z-index: 4; top: 17px; left: 19px; color: rgba(255,255,255,.56); font-size: 8px; }
 .visual-store { background: #d6edac; }
