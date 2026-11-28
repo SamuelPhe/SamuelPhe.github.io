@@ -1260,3 +1260,83 @@ body { background: var(--lab-paper); }
   .version-switch { margin-left: 0; padding: 6px 8px; font-size: 8px; }
 }
 
+/* Field Experience: this section uses a light paper background, so all copy
+   must use dark ink (the previous light-theme text was nearly invisible). */
+.operations-section {
+  color: #302628;
+  background: #f5f0e9;
+}
+.operations-section .section-topline {
+  border-bottom-color: rgba(48,38,40,.18);
+}
+.operations-section .section-index {
+  color: #8f292f;
+}
+.operations-section .section-side-note {
+  color: #554744;
+}
+.operations-layout h2 {
+  color: #21191b;
+}
+.operations-layout h2 em {
+  color: #8f292f;
+}
+.operations-intro {
+  color: #514340;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.experience-period {
+  border-color: rgba(143,41,47,.35);
+  color: #8f292f;
+  background: rgba(143,41,47,.045);
+  font-size: 10px;
+}
+.experience-role {
+  border-top-color: rgba(48,38,40,.2);
+}
+.experience-role b {
+  color: #21191b;
+  font-size: 15px;
+}
+.experience-role span {
+  color: #8f292f;
+  font-size: 13px;
+  font-weight: 600;
+}
+.experience-role small {
+  color: #554744;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.operations-list {
+  border-top-color: rgba(48,38,40,.2);
+}
+.operations-list > div {
+  border-bottom-color: rgba(48,38,40,.18);
+}
+.operations-list > div > span {
+  color: #8f292f;
+  font-size: 11px;
+  font-weight: 600;
+}
+.operations-list b {
+  color: #21191b;
+  font-size: 14px;
+}
+.operations-list small {
+  max-width: 500px;
+  color: #514340;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.operations-list > div > i {
+  color: #8f292f;
+}
+@media (max-width: 560px) {
+  .operations-intro { font-size: 13px; }
+  .operations-list b { font-size: 13px; }
+  .operations-list small { font-size: 12px; line-height: 1.75; }
+  .experience-role small { font-size: 11px; }
+}
+
