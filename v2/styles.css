@@ -1366,3 +1366,41 @@ body { background: var(--lab-paper); }
   .experience-role small { font-size: 11px; }
 }
 
+
+
+/* Section-aware navigation indicator: each destination has its own accent colour. */
+.main-nav a {
+  position: relative;
+  padding-bottom: 10px;
+  --nav-accent: #f4a29b;
+  transition: color .2s ease;
+}
+.main-nav a[href="#systems"] { --nav-accent: #e7bd71; }
+.main-nav a[href="#about"] { --nav-accent: #a8c69a; }
+.main-nav a[href="#experience"] { --nav-accent: #8ebfe1; }
+.main-nav a[href="#toolkit"] { --nav-accent: #c5a0df; }
+.main-nav a[href="#notes"] { --nav-accent: #80c9c0; }
+.main-nav a[href="#contact"] { --nav-accent: #ee8f86; }
+.main-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  height: 2px;
+  background: var(--nav-accent);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.main-nav a[aria-current="location"] { color: #fff; }
+.main-nav a[aria-current="location"] span { color: var(--nav-accent); }
+.main-nav a[aria-current="location"]::after { transform: scaleX(1); }
+.main-nav a:hover::after, .main-nav a:focus-visible::after { transform: scaleX(1); }
+@media (max-width: 1050px) {
+  .main-nav a { padding-bottom: 12px; }
+  .main-nav a::after { right: auto; bottom: -1px; width: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .main-nav a::after { transition: none; }
+}
