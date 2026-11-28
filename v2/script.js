@@ -306,6 +306,16 @@ const projectNotes = {
     tech: ["Python", "OCR", "Image Analysis", "FastAPI"],
     url: "https://github.com/SamuelPhe/BuktiScope"
   },
+  "neon-arcade": {
+    title: "Neon Arcade",
+    context: "PERSONAL PROJECT / GAME DEVELOPMENT",
+    status: "LIVE DEMO / PWA-READY",
+    description: "Arcade browser berisi tiga mini-game: Neon Runner, Memory Flip, dan Reflex Lab. Proyek ini mencakup kontrol keyboard dan sentuh, skor personal, empat pencapaian, efek suara serta musik sintetis, dan dukungan offline setelah aset berhasil dicache saat online.",
+    focus: "Membangun pengalaman game browser yang ringan dan responsif, sekaligus mengelola sesi permainan, progres pemain, audio, dan penyimpanan lokal.",
+    role: "Proyek personal yang dirancang dan dikembangkan sendiri.",
+    tech: ["HTML", "CSS", "JavaScript", "Progressive Web App", "Web Audio API"],
+    url: "https://samuelphe.github.io/neon-arcade/"
+  },
   krs: {
     title: "KRS Academic System",
     context: "TEAM PROJECT / SEMESTER 4",
@@ -431,6 +441,15 @@ const workflowMaps = {
       { title: "Analisis sinyal", type: "IMAGE ANALYSIS", actor: "TOOLS", copy: "Eksperimen memeriksa karakteristik gambar dan teks untuk menampilkan sinyal yang relevan." },
       { title: "Tinjauan manusia", type: "HUMAN REVIEW", actor: "PENINJAU", copy: "Sinyal ditampilkan sebagai bahan pertimbangan. Keputusan akhir tetap membutuhkan pemeriksaan manusia." }
     ]
+  },
+  "neon-arcade": {
+    label: "NEON ARCADE / GAME PROGRESSION",
+    stages: [
+      { title: "Pilih mini-game", type: "GAME SELECTION", actor: "PEMAIN", copy: "Pemain memilih salah satu dari tiga tantangan: Neon Runner, Memory Flip, atau Reflex Lab." },
+      { title: "Mainkan tantangan", type: "GAMEPLAY", actor: "KEYBOARD / TOUCH", copy: "Pemain berinteraksi melalui keyboard atau layar sentuh sesuai kontrol pada game yang dipilih." },
+      { title: "Perbarui progres", type: "SCORE & ACHIEVEMENTS", actor: "GAME LOGIC", copy: "Hasil permainan memperbarui personal best, total permainan, dan pencapaian sesuai kondisi yang terpenuhi." },
+      { title: "Simpan secara lokal", type: "LOCAL PERSISTENCE", actor: "BROWSER", copy: "Skor dan progres disimpan di localStorage pada perangkat pemain. Service worker dapat menyajikan aset game yang sudah dicache untuk sesi offline setelah kunjungan online pertama." }
+    ]
   }
 };
 const flowProjectButtons = [...document.querySelectorAll("[data-flow-project]")];
@@ -550,7 +569,7 @@ const translations = {
     workTitle: 'Hal yang pernah<br><em>saya bangun.</em>',
     workIntro: "Mulai dari aplikasi web, sistem desktop, sampai eksplorasi ide. Setiap proyek punya tujuan dan proses belajarnya sendiri.",
     projectFilters: "Filter proyek",
-    filterAll: 'Semua <span>07</span>',
+    filterAll: 'Semua <span>08</span>',
     filterWeb: "Web",
     filterDesktop: "Desktop",
     filterResearch: "Riset",
@@ -563,6 +582,8 @@ const translations = {
     openProject: "Buka detail proyek",
     openProjectText: 'Buka catatan proyek <span>↗</span>',
     projectBukti: "Eksperimen local-first untuk memeriksa gambar bukti transfer dan menampilkan sinyal yang layak ditinjau manusia. Fokusnya transparansi analisis, bukan klaim deteksi palsu yang pasti.",
+    projectNeon: "Arcade browser berisi tiga mini-game: endless runner, memory puzzle, dan reaction test. Dilengkapi skor personal, pencapaian, audio sintetis, serta dukungan offline melalui PWA.",
+    liveDemo: 'Mainkan demo <span>↗</span>',
     projectKrs: "Aplikasi desktop untuk alur pengajuan KRS, pemilihan jadwal, pemeriksaan bentrok, peninjauan Dosen PA, dan finalisasi oleh Kaprodi.",
     projectVentra: "Aplikasi inventaris desktop untuk pencatatan produk, penyesuaian stok, barang masuk dan keluar, serta informasi pengiriman.",
     projectEdu: "Aplikasi web penjadwalan ujian untuk mengatur jadwal, aktivitas guru, berkas soal, manajemen pengguna, dan laporan.",
@@ -577,6 +598,7 @@ const translations = {
     flowKrs: "KRS Academic System",
     flowVentra: "Ventra Inventory",
     flowBukti: "BuktiScope",
+    flowNeon: "Neon Arcade",
     interactiveMap: "PETA INTERAKTIF ↗",
     systemStages: "Tahapan alur sistem",
     flowDisclaimer: "Peta ini merupakan ringkasan konseptual berdasarkan deskripsi proyek, bukan rekaman proses aplikasi secara langsung.",
@@ -714,7 +736,7 @@ const translations = {
     workTitle: 'Things I have<br><em>built so far.</em>',
     workIntro: "From web applications and desktop systems to early-stage experiments. Each project has its own purpose and learning process.",
     projectFilters: "Project filters",
-    filterAll: 'All <span>07</span>',
+    filterAll: 'All <span>08</span>',
     filterWeb: "Web",
     filterDesktop: "Desktop",
     filterResearch: "Research",
@@ -727,6 +749,8 @@ const translations = {
     openProject: "Open project details",
     openProjectText: 'Open project notes <span>↗</span>',
     projectBukti: "A local-first experiment for reviewing transfer receipt images and surfacing signals for human review. It focuses on transparent analysis rather than claiming to prove that a receipt is fake.",
+    projectNeon: "A browser arcade featuring three mini-games: an endless runner, a memory puzzle, and a reaction test. Includes personal bests, achievements, synthesized audio, and offline support through a PWA.",
+    liveDemo: 'Play live demo <span>↗</span>',
     projectKrs: "A desktop application supporting the course registration workflow, schedule selection, conflict checks, academic advisor review, and final approval by the program head.",
     projectVentra: "A desktop inventory application for recording products, adjusting stock, tracking incoming and outgoing items, and maintaining delivery information.",
     projectEdu: "A web-based exam scheduling application for managing schedules, teacher activities, question files, user access, and reports.",
@@ -741,6 +765,7 @@ const translations = {
     flowKrs: "KRS Academic System",
     flowVentra: "Ventra Inventory",
     flowBukti: "BuktiScope",
+    flowNeon: "Neon Arcade",
     interactiveMap: "INTERACTIVE MAP ↗",
     systemStages: "System workflow stages",
     flowDisclaimer: "This is a conceptual summary based on the project description, not a live recording of the application.",
@@ -881,6 +906,13 @@ const projectNotesEnglish = {
     role: "Personal project / early-stage R&D experiment.",
     tech: ["Python", "OCR", "Image Analysis", "FastAPI"], url: "https://github.com/SamuelPhe/BuktiScope"
   },
+  "neon-arcade": {
+    title: "Neon Arcade", context: "PERSONAL PROJECT / GAME DEVELOPMENT", status: "LIVE DEMO / PWA-READY",
+    description: "A browser arcade featuring three mini-games: Neon Runner, Memory Flip, and Reflex Lab. It includes keyboard and touch controls, personal bests, four achievements, synthesized sound and music, and offline support after assets are cached while online.",
+    focus: "Building a lightweight, responsive browser game experience while managing gameplay sessions, player progress, audio, and local persistence.",
+    role: "A personal project designed and developed independently.",
+    tech: ["HTML", "CSS", "JavaScript", "Progressive Web App", "Web Audio API"], url: "https://samuelphe.github.io/neon-arcade/"
+  },
   krs: {
     title: "KRS Academic System", context: "TEAM PROJECT / SEMESTER 4", status: "ACADEMIC PROJECT",
     description: "A desktop application supporting student course registration, schedule selection, conflict checks, academic advisor review, and final approval by the program head.",
@@ -942,6 +974,15 @@ const workflowMapsEnglish = {
       { title: "Image input", type: "INPUT", actor: "USER", copy: "A transfer receipt image is submitted as the material to be reviewed." },
       { title: "Signal analysis", type: "IMAGE ANALYSIS", actor: "TOOLS", copy: "The experiment checks image and text characteristics to surface relevant signals." },
       { title: "Human review", type: "HUMAN REVIEW", actor: "REVIEWER", copy: "Signals are shown as supporting information. The final decision still requires human inspection." }
+    ]
+  },
+  "neon-arcade": {
+    label: "NEON ARCADE / GAME PROGRESSION",
+    stages: [
+      { title: "Choose a mini-game", type: "GAME SELECTION", actor: "PLAYER", copy: "The player selects one of three challenges: Neon Runner, Memory Flip, or Reflex Lab." },
+      { title: "Play the challenge", type: "GAMEPLAY", actor: "KEYBOARD / TOUCH", copy: "The player interacts using a keyboard or touchscreen, depending on the selected game's controls." },
+      { title: "Update progress", type: "SCORE & ACHIEVEMENTS", actor: "GAME LOGIC", copy: "Game results update personal bests, total plays, and achievements when their requirements are met." },
+      { title: "Save locally", type: "LOCAL PERSISTENCE", actor: "BROWSER", copy: "Scores and progress are stored in localStorage on the player's device. The service worker can serve cached game assets offline after the first successful online visit." }
     ]
   }
 };
