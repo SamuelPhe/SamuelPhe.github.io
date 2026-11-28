@@ -752,7 +752,7 @@ const translations = {
     researchCopy: "Collaborative research on selecting cloud storage services for IT students, using ROC weighting and TOPSIS to rank alternatives.",
     contactSideNote: "Open to conversations and collaboration",
     contactGreeting: "SEE YOU AROUND THE INTERNET.",
-    contactTitle: 'Have an idea?<br><em>Let's connect.</em>',
+    contactTitle: "Have an idea?<br><em>Let's connect.</em>",
     contactCopy: "I enjoy exchanging ideas about technology, projects, learning, and things currently being built.",
     footerCopy: "Designed and maintained with curiosity.",
     backTop: "Back to top",
