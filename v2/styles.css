@@ -1126,7 +1126,7 @@ body { background: var(--lab-paper); }
   .systems-hero h1 { font-size: clamp(47px, 10vw, 72px); }
   .lab-console { width: min(100%, 560px); justify-self: start; margin-left: 5px; }
   .flow-explorer { grid-template-columns: 1fr; }
-  .flow-selector { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-right: 0; border-bottom: 1px solid rgba(244,162,155,.17); }
+  .flow-selector { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border-right: 0; border-bottom: 1px solid rgba(244,162,155,.17); }
   .flow-project { min-height: 90px; padding: 13px; border-right: 1px solid rgba(244,162,155,.12); }
   .flow-project b { font-size: 9px; }
   .flow-project small { font-size: 6px; }
@@ -1403,4 +1403,83 @@ body { background: var(--lab-paper); }
 }
 @media (prefers-reduced-motion: reduce) {
   .main-nav a::after { transition: none; }
+}
+
+/* Neon Arcade project card */
+.status-live { color: #176d68; background: rgba(42, 150, 137, .12); }
+.status-live i { background: #31a99a; }
+.visual-neon {
+  background: radial-gradient(circle at 52% 45%, rgba(38, 214, 236, .18), transparent 42%), linear-gradient(135deg, #111627, #19132c 58%, #101c27);
+}
+.visual-neon::before {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(96, 224, 235, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(96, 224, 235, .08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  content: "";
+  mask-image: linear-gradient(135deg, transparent, #000 35%, #000 75%, transparent);
+}
+.arcade-machine {
+  position: relative;
+  z-index: 1;
+  width: min(76%, 420px);
+  padding: 10px;
+  border: 1px solid rgba(116, 232, 238, .45);
+  background: rgba(7, 12, 25, .88);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, .32), 0 0 32px rgba(68, 220, 230, .1);
+  transform: rotate(-1.5deg);
+}
+.arcade-machine-top, .arcade-machine-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(225, 249, 249, .55);
+  font-family: var(--mono);
+  font-size: 7px;
+  letter-spacing: .12em;
+}
+.arcade-machine-screen {
+  margin: 9px 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(116, 232, 238, .16);
+  background: radial-gradient(circle at 75% 20%, rgba(236, 64, 139, .18), transparent 44%), #090f1e;
+}
+.arcade-kicker { color: #67d8df; font-family: var(--mono); font-size: 7px; letter-spacing: .13em; }
+.arcade-machine-screen strong {
+  display: block;
+  margin: 12px 0 15px;
+  color: #f6f5f6;
+  font-size: clamp(27px, 4vw, 44px);
+  letter-spacing: -.08em;
+  line-height: .83;
+}
+.arcade-machine-screen strong em { color: #f37eb7; font-style: normal; text-shadow: 0 0 18px rgba(243, 126, 183, .35); }
+.arcade-game-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.arcade-game-pills i {
+  padding: 5px 7px;
+  border: 1px solid rgba(103, 216, 223, .25);
+  color: #9be8e9;
+  font-family: var(--mono);
+  font-size: 6px;
+  font-style: normal;
+  letter-spacing: .08em;
+}
+.arcade-machine-foot b { color: #f37eb7; font-weight: 500; }
+.arcade-orbit {
+  position: absolute;
+  top: 23%;
+  right: 7%;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(243, 126, 183, .2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 24px rgba(243, 126, 183, .035), 0 0 0 48px rgba(103, 216, 223, .025);
+  pointer-events: none;
+}
+.project-links { display: flex; flex-wrap: wrap; gap: 0 20px; }
+.project-links .project-link { margin-top: 18px; }
+@media (max-width: 560px) {
+  .arcade-machine { width: 82%; }
+  .arcade-machine-screen { padding: 16px; }
+  .arcade-game-pills { gap: 4px; }
 }
