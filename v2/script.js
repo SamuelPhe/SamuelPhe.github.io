@@ -34,32 +34,52 @@ const filterButtons = [...document.querySelectorAll("[data-filter]")];
 const projectCards = [...document.querySelectorAll(".project-card[data-category]")];
 const visibleCount = document.getElementById("visible-count");
 const emptyState = document.getElementById("empty-state");
+const projectMoreButton = document.getElementById("project-more");
+const initialProjectLimit = 3;
+let activeProjectFilter = "all";
+let showAllProjects = false;
 
-function applyProjectFilter(filter) {
+function applyProjectFilter(filter = activeProjectFilter) {
+  activeProjectFilter = filter;
+  const matchingCount = projectCards.filter((card) => filter === "all" || card.dataset.category === filter).length;
+  let matchIndex = 0;
   let visible = 0;
 
   projectCards.forEach((card) => {
-    const shouldShow = filter === "all" || card.dataset.category === filter;
+    const matches = filter === "all" || card.dataset.category === filter;
+    const shouldShow = matches && (showAllProjects || matchIndex < initialProjectLimit);
+    if (matches) matchIndex += 1;
     card.hidden = !shouldShow;
     if (shouldShow) visible += 1;
   });
 
   if (visibleCount) visibleCount.textContent = String(visible).padStart(2, "0");
-  if (emptyState) emptyState.hidden = visible !== 0;
+  if (emptyState) emptyState.hidden = matchingCount !== 0;
+
+  if (projectMoreButton) {
+    projectMoreButton.hidden = matchingCount <= initialProjectLimit;
+    projectMoreButton.setAttribute("aria-expanded", String(showAllProjects));
+    const label = showAllProjects ? "showLessProjects" : "showMoreProjects";
+    projectMoreButton.textContent = translations[currentLanguage][label];
+  }
 }
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-
     filterButtons.forEach((item) => {
       const isActive = item === button;
       item.classList.toggle("is-active", isActive);
       item.setAttribute("aria-pressed", String(isActive));
     });
 
-    applyProjectFilter(filter);
+    showAllProjects = false;
+    applyProjectFilter(button.dataset.filter);
   });
+});
+
+projectMoreButton?.addEventListener("click", () => {
+  showAllProjects = !showAllProjects;
+  applyProjectFilter();
 });
 
 const revealElements = document.querySelectorAll(".reveal");
@@ -111,7 +131,10 @@ function openCommandPalette(trigger = document.activeElement) {
 }
 
 document.querySelectorAll("[data-open-command]").forEach((button) => {
-  button.addEventListener("click", () => openCommandPalette(button));
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    openCommandPalette(button);
+  });
 });
 
 document.addEventListener("keydown", (event) => {
@@ -164,7 +187,7 @@ if (commandInput && commandLinks.length) {
       link.removeAttribute("aria-current");
     });
     if (commandNoResults) commandNoResults.hidden = true;
-    if (lastCommandTrigger instanceof HTMLElement) lastCommandTrigger.focus();
+    if (lastCommandTrigger instanceof HTMLElement) lastCommandTrigger.focus({ preventScroll: true });
   });
 
   commandLinks.forEach((link) => {
@@ -505,6 +528,8 @@ const translations = {
     filterDesktop: "Desktop",
     filterResearch: "Riset",
     projectsShown: "PROYEK DITAMPILKAN",
+    showMoreProjects: "Lihat proyek lainnya",
+    showLessProjects: "Tampilkan lebih sedikit",
     illustrationNote: "Ilustrasi di setiap kartu adalah visual konseptual yang dibuat untuk portofolio, bukan tangkapan layar aplikasi yang sedang berjalan.",
     projectShiye: "Platform storefront dan top-up digital berbasis Laravel. Pengembangan fitur sedang dijeda untuk menilai kelayakan bisnis melalui harga pemasok, harga jual, biaya pembayaran, margin, dan ketersediaan produk.",
     projectShiyeFoot: "Source code utama bersifat privat; belum ada demo publik yang disiapkan.",
@@ -667,6 +692,8 @@ const translations = {
     filterDesktop: "Desktop",
     filterResearch: "Research",
     projectsShown: "PROJECTS SHOWN",
+    showMoreProjects: "More projects",
+    showLessProjects: "Show fewer",
     illustrationNote: "The visuals on these cards are conceptual illustrations created for this portfolio, not screenshots of running applications.",
     projectShiye: "A Laravel-based digital storefront and top-up platform. Feature development is paused while business viability is assessed through supplier prices, selling prices, payment costs, margins, and product availability.",
     projectShiyeFoot: "The main source code is private; no public demo is currently available.",
@@ -928,6 +955,7 @@ function applyLanguage(language) {
       : dictionary.openNavigation);
   }
   if (localTime) updateLocalTime();
+  applyProjectFilter(activeProjectFilter);
   const activeMode = document.querySelector("[data-lab-mode].is-active")?.dataset.labMode || "build";
   setLabMode(activeMode);
   renderFlow(activeFlowKey);
