@@ -127,7 +127,7 @@ function openCommandPalette(trigger = document.activeElement) {
   if (!commandDialog || typeof commandDialog.showModal !== "function") return;
   lastCommandTrigger = trigger instanceof HTMLElement ? trigger : null;
   if (!commandDialog.open) commandDialog.showModal();
-  window.setTimeout(() => commandInput?.focus(), 30);
+  window.setTimeout(() => commandInput?.focus({ preventScroll: true }), 30);
 }
 
 document.querySelectorAll("[data-open-command]").forEach((button) => {
