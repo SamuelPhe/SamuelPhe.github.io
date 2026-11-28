@@ -1,5 +1,8 @@
 document.documentElement.classList.add("has-js");
 
+let currentLanguage = "id";
+let activeProjectKey = null;
+
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 
@@ -77,7 +80,7 @@ const localTime = document.getElementById("local-time");
 function updateLocalTime() {
   if (!localTime) return;
   try {
-    localTime.textContent = new Intl.DateTimeFormat("id-ID", {
+    localTime.textContent = new Intl.DateTimeFormat(currentLanguage === "en" ? "en-GB" : "id-ID", {
       timeZone: "Asia/Pontianak",
       hour: "2-digit",
       minute: "2-digit",
@@ -208,16 +211,17 @@ const labModeTags = document.getElementById("lab-mode-tags");
 function setLabMode(mode) {
   const item = labModes[mode];
   if (!item) return;
+  const localized = currentLanguage === "en" ? labModesEnglish[mode] : item;
   labModeButtons.forEach((button) => {
     const active = button.dataset.labMode === mode;
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", String(active));
   });
-  if (labModeKicker) labModeKicker.textContent = item.kicker;
-  if (labModeTitle) labModeTitle.textContent = item.title;
-  if (labModeCopy) labModeCopy.textContent = item.copy;
+  if (labModeKicker) labModeKicker.textContent = localized.kicker;
+  if (labModeTitle) labModeTitle.textContent = localized.title;
+  if (labModeCopy) labModeCopy.textContent = localized.copy;
   if (labModeTags) {
-    labModeTags.replaceChildren(...item.tags.map((tag) => {
+    labModeTags.replaceChildren(...localized.tags.map((tag) => {
       const chip = document.createElement("span");
       chip.textContent = tag;
       return chip;
@@ -314,9 +318,10 @@ const projectDialogLink = document.getElementById("project-dialog-link");
 let lastProjectTrigger = null;
 
 function openProjectNote(key, trigger) {
-  const item = projectNotes[key];
+  const item = currentLanguage === "en" ? projectNotesEnglish[key] : projectNotes[key];
   if (!item || !projectDialog || typeof projectDialog.showModal !== "function") return;
-  lastProjectTrigger = trigger instanceof HTMLElement ? trigger : null;
+  lastProjectTrigger = trigger instanceof HTMLElement ? trigger : lastProjectTrigger;
+  activeProjectKey = key;
   projectDialogTitle.textContent = item.title;
   projectDialogContext.textContent = item.context;
   projectDialogStatus.textContent = item.status;
@@ -387,7 +392,8 @@ const flowInspectorMark = document.querySelector(".flow-inspector-mark");
 let activeFlowKey = "krs";
 
 function showFlowStage(index) {
-  const flow = workflowMaps[activeFlowKey];
+  const flowSet = currentLanguage === "en" ? workflowMapsEnglish : workflowMaps;
+  const flow = flowSet[activeFlowKey];
   const stage = flow?.stages[index];
   if (!stage) return;
   [...flowStageList.querySelectorAll("[data-flow-stage]")].forEach((button) => {
@@ -403,7 +409,8 @@ function showFlowStage(index) {
 }
 
 function renderFlow(key) {
-  const flow = workflowMaps[key];
+  const flowSet = currentLanguage === "en" ? workflowMapsEnglish : workflowMaps;
+  const flow = flowSet[key];
   if (!flow || !flowStageList) return;
   activeFlowKey = key;
   flowProjectButtons.forEach((button) => {
@@ -451,4 +458,477 @@ skillFilterButtons.forEach((button) => {
     });
   });
 });
+
+// ---------------------------------------------------------
+// Complete Indonesian / English translations for V2
+// ---------------------------------------------------------
+const translations = {
+  id: {
+    skipNav: "Lewati navigasi",
+    quickSearch: "Buka pencarian cepat",
+    chooseLanguage: "Pilih bahasa",
+    versionOne: "Kembali ke portofolio versi 1",
+    openNavigation: "Buka navigasi",
+    mainNavigation: "Navigasi utama",
+    navWork: 'Karya <span>01</span>',
+    navSystems: 'Systems <span>02</span>',
+    navProfile: 'Profil <span>03</span>',
+    navToolkit: 'Toolkit <span>04</span>',
+    navResearch: 'Riset <span>05</span>',
+    navContact: 'Kontak <span>↗</span>',
+    heroTitle: 'Mengamati sistem.<br><em>Membangun kemungkinan.</em>',
+    heroCopy: "Saya Samuel, mahasiswa Sistem dan Teknologi Informasi di ITBSS. Saya senang memahami bagaimana sebuah sistem bekerja, mengeksplorasi teknologi, dan mengubah ide menjadi proyek yang bisa dipelajari.",
+    heroExplore: 'Jelajahi proyek <span>↘</span>',
+    heroMap: 'Lihat system map <span>↓</span>',
+    studyLabel: "STUDI",
+    studyValue: "Sistem dan Teknologi Informasi",
+    exploreArea: "AREA EKSPLORASI",
+    exploreValue: 'Software <i>×</i> Data <i>×</i> Systems',
+    localTime: "WAKTU LOKAL",
+    labConsole: "Panel eksplorasi interaktif",
+    labModes: "Pilih area eksplorasi",
+    currentFocus: "CURRENT FOCUS / 01",
+    statusLabel: "STATUS",
+    learningStatus: "SEDANG DALAM PROSES BELAJAR",
+    summary: "Ringkasan",
+    stripFirst: 'AMATI MASALAH — <span>PAHAMI SISTEMNYA.</span>',
+    stripSecond: 'PETAKAN / BANGUN / SEMPURNAKAN <span>— ULANGI.</span>',
+    workSideNote: "Kumpulan eksperimen dan proyek pilihan",
+    workTitle: 'Hal yang pernah<br><em>saya bangun.</em>',
+    workIntro: "Mulai dari aplikasi web, sistem desktop, sampai eksplorasi ide. Setiap proyek punya tujuan dan proses belajarnya sendiri.",
+    projectFilters: "Filter proyek",
+    filterAll: 'Semua <span>07</span>',
+    filterWeb: "Web",
+    filterDesktop: "Desktop",
+    filterResearch: "Riset",
+    projectsShown: "PROYEK DITAMPILKAN",
+    illustrationNote: "Ilustrasi di setiap kartu adalah visual konseptual yang dibuat untuk portofolio, bukan tangkapan layar aplikasi yang sedang berjalan.",
+    projectShiye: "Platform storefront dan top-up digital berbasis Laravel. Pengembangan fitur sedang dijeda untuk menilai kelayakan bisnis melalui harga pemasok, harga jual, biaya pembayaran, margin, dan ketersediaan produk.",
+    projectShiyeFoot: "Source code utama bersifat privat; belum ada demo publik yang disiapkan.",
+    openProject: "Buka detail proyek",
+    openProjectText: 'Buka catatan proyek <span>↗</span>',
+    projectBukti: "Eksperimen local-first untuk memeriksa gambar bukti transfer dan menampilkan sinyal yang layak ditinjau manusia. Fokusnya transparansi analisis, bukan klaim deteksi palsu yang pasti.",
+    projectKrs: "Aplikasi desktop untuk alur pengajuan KRS, pemilihan jadwal, pemeriksaan bentrok, peninjauan Dosen PA, dan finalisasi oleh Kaprodi.",
+    projectVentra: "Aplikasi inventaris desktop untuk pencatatan produk, penyesuaian stok, barang masuk dan keluar, serta informasi pengiriman.",
+    projectEdu: "Aplikasi web penjadwalan ujian untuk mengatur jadwal, aktivitas guru, berkas soal, manajemen pengguna, dan laporan.",
+    projectPos: "Aplikasi kasir berbasis web dengan area admin dan kasir, manajemen produk dan stok, transaksi penjualan, serta riwayat transaksi.",
+    projectResearch: "Penelitian kolaboratif untuk mengevaluasi alternatif layanan penyimpanan cloud bagi mahasiswa IT melalui pembobotan ROC dan pemeringkatan TOPSIS.",
+    viewRepository: 'Lihat repository <span>↗</span>',
+    readPublication: 'Baca publikasi <span>↗</span>',
+    systemSideNote: "Pilih proyek, telusuri alurnya",
+    systemsTitle: 'Lihat bagaimana<br><em>sebuah sistem bergerak.</em>',
+    systemsIntro: "Setiap proyek memiliki alur dan hubungan antarbagian. Pilih salah satu studi kasus, lalu buka setiap tahap untuk melihat gambaran prosesnya.",
+    chooseSystemMap: "Pilih system map",
+    flowKrs: "KRS Academic System",
+    flowVentra: "Ventra Inventory",
+    flowBukti: "BuktiScope",
+    interactiveMap: "PETA INTERAKTIF ↗",
+    systemStages: "Tahapan alur sistem",
+    flowDisclaimer: "Peta ini merupakan ringkasan konseptual berdasarkan deskripsi proyek, bukan rekaman proses aplikasi secara langsung.",
+    profileSideNote: "Latar belakang, pendidikan, dan bahasa",
+    hello: "HALO, SENANG BERTEMU.",
+    aboutTitle: 'Sistem, data,<br><em>dan software.</em>',
+    aboutLead: "Saya mahasiswa Sistem dan Teknologi Informasi di Institut Teknologi dan Bisnis Sabda Setia (ITBSS). Saya tertarik memahami bagaimana sistem dirancang, bagaimana data dikelola, dan bagaimana software dapat membantu menyelesaikan masalah praktis.",
+    aboutCopy1: "Saya mengembangkan pemahaman melalui perkuliahan, proyek akademik, kerja tim, penelitian, dan eksperimen personal. Area yang sedang saya eksplorasi meliputi software development, basis data, analisis sistem, serta pengalaman pengguna.",
+    aboutCopy2: "Di luar kampus, pengalaman kerja memberi saya konteks tentang alur operasional, dokumentasi, pengelolaan data, dan koordinasi antarbagian. Saya membawa sudut pandang tersebut saat mempelajari bagaimana sistem informasi bisa mendukung proses nyata.",
+    aboutCopy3: "Saya masih dalam proses membangun kompetensi. Karena itu, portofolio ini berusaha membedakan pengalaman kerja, proyek tim, dan eksperimen pribadi secara jujur.",
+    programLabel: "PROGRAM STUDI",
+    areasLabel: "AREA EKSPLORASI",
+    locationLabel: "LOKASI",
+    learningLabel: "CARA BELAJAR",
+    areaValue: "Aplikasi web, desktop, dan sistem informasi",
+    learningValue: "Proyek, eksperimen, dan penelitian",
+    educationTitle: "Riwayat pendidikan",
+    educationDegree: "Sarjana · Sistem dan Teknologi Informasi",
+    educationEstimate: "Perkiraan selesai: September 2028",
+    highSchoolMajor: "Ilmu Pengetahuan Sosial (IPS)",
+    languagesTitle: "Bahasa",
+    languageIndonesian: "Bahasa Indonesia",
+    languageEnglish: "Bahasa Inggris",
+    languageJapanese: "Bahasa Jepang",
+    languageMandarin: "Bahasa Mandarin",
+    englishNote: "Bahasa Inggris tercantum sebagai Limited Working di LinkedIn; hasil Pearson 3 Skills yang pernah kamu bagikan adalah B1+.",
+    membershipTitle: "Keanggotaan",
+    membershipName: "Member Resmi IMPHNEN",
+    membershipNote: "Dicantumkan sebagai keanggotaan, bukan sertifikasi kompetensi teknis.",
+    experienceSideNote: "PT Dangau Selaras · Kubu Raya",
+    experienceTitle: 'Belajar dari proses<br><em>di dunia nyata.</em>',
+    experienceIntro: "Pengalaman profesional di PT Dangau Selaras memperkenalkan saya pada alur operasional, dokumentasi, pengelolaan data, dan koordinasi antarbagian. Bagian ini melengkapi perjalanan akademik saya di bidang Sistem dan Teknologi Informasi.",
+    experienceRole: "Accounting",
+    experienceIndustry: "Industri perhotelan · Kubu Raya, Kalimantan Barat",
+    operationsFinanceTitle: "Keuangan & perbankan",
+    operationsFinanceCopy: "Menyusun rekap penggajian berdasarkan hari kerja dan potongan dari HRD; menyiapkan dokumen pembayaran melalui Qlola atau teller; memantau transaksi dan saldo rekening, serta mengunduh dan memeriksa rekening koran. Sesekali melakukan input transaksi sebagai Maker sesuai hak akses.",
+    operationsArTitle: "Accounts receivable",
+    operationsArCopy: "Mencatat dan memantau piutang, berkoordinasi dengan Marketing untuk tindak lanjut pembayaran tamu instansi, memeriksa bukti pembayaran, dan menyampaikan invoice kepada pihak terkait.",
+    operationsProcurementTitle: "Pengadaan & INAPROC",
+    operationsProcurementCopy: "Menyusun daftar produk, memproses pembelian, dan mengunggah dokumen pendukung melalui e-Katalog v6 / INAPROC. Juga mengurus pembelian Tanda Tangan Elektronik (TTE) dan e-Meterai.",
+    operationsBpjsTitle: "Administrasi kepegawaian & BPJS",
+    operationsBpjsCopy: "Mendaftarkan karyawan baru, menonaktifkan kepesertaan karyawan yang berhenti, memperbarui data karyawan dan gaji, mengelola administrasi iuran, serta memeriksa status BPJS Ketenagakerjaan melalui SIPP dan BPJS Kesehatan melalui EDABU.",
+    toolkitSideNote: "Yang pernah saya gunakan",
+    toolkitTitle: 'Toolkit <em>yang terus tumbuh.</em>',
+    toolkitIntro: "Teknologi dan tools dari proyek akademik, pekerjaan, dan eksplorasi personal. Tingkat pengalaman tiap alat tidak sama.",
+    exploreByArea: "JELAJAHI BERDASARKAN AREA",
+    skillFilterNote: "Pilih kelompok untuk melihat tools yang pernah saya gunakan",
+    skillFilters: "Filter kelompok tools",
+    skillAll: "Semua",
+    skillWeb: "Web",
+    skillDesktop: "Desktop",
+    skillData: "Data & workflow",
+    skillVisual: "Visual",
+    skillProgramming: "Programming & desktop",
+    skillProgrammingCopy: "Dipakai dalam latihan pemrograman dan tugas kuliah.",
+    skillDatabase: "Database & workflow",
+    skillDatabaseCopy: "Pengelolaan data dan alur kerja aplikasi.",
+    skillOffice: "Office & data",
+    skillOfficeCopy: "Tools yang digunakan pada pekerjaan administrasi dan tugas akademik.",
+    skillVisualHeading: "3D & visual exploration",
+    skillVisualCopy: "Tools kreatif yang pernah digunakan untuk eksplorasi visual dan pemodelan.",
+    toolkitNote: "Daftar ini menunjukkan pengalaman penggunaan, bukan klaim bahwa saya telah menguasai semua tools pada tingkat profesional.",
+    researchSideNote: "Satu catatan yang dipublikasikan",
+    researchArtBottom: 'ROC × TOPSIS<br>PENDUKUNG KEPUTUSAN',
+    researchCopy: "Penelitian kolaboratif mengenai pemilihan layanan penyimpanan cloud untuk mahasiswa IT, menggunakan pembobotan ROC dan pemeringkatan alternatif TOPSIS.",
+    contactSideNote: "Terbuka untuk percakapan dan kolaborasi",
+    contactGreeting: "SAMPAI JUMPA DI INTERNET.",
+    contactTitle: 'Punya ide?<br><em>Mari terhubung.</em>',
+    contactCopy: "Saya senang bertukar pikiran tentang teknologi, proyek, pembelajaran, dan hal-hal yang sedang dibangun.",
+    footerCopy: "Dirancang dan dirawat dengan rasa ingin tahu.",
+    backTop: "Kembali ke atas",
+    closeProject: "Tutup detail proyek",
+    focusLabel: "FOKUS",
+    contextLabel: "KONTEKS",
+    toolsLabel: "TOOLS & TEKNOLOGI",
+    openProjectLink: "Buka proyek ↗",
+    searchInput: "Cari bagian halaman",
+    searchPlaceholder: "Cari bagian halaman...",
+    quickNavigation: "NAVIGASI CEPAT",
+    commandWork: '<span>01</span> Karya dan proyek <kbd>↵</kbd>',
+    commandSystems: '<span>02</span> System map <kbd>↵</kbd>',
+    commandProfile: '<span>03</span> Profil akademik <kbd>↵</kbd>',
+    commandExperience: '<span>04</span> Pengalaman profesional <kbd>↵</kbd>',
+    commandToolkit: '<span>05</span> Toolkit <kbd>↵</kbd>',
+    commandResearch: '<span>06</span> Riset dan publikasi <kbd>↵</kbd>',
+    commandContact: '<span>07</span> Kontak <kbd>↵</kbd>',
+    commandGithub: '<span>↗</span> GitHub profile <kbd>↵</kbd>',
+    noResults: "Tidak ada bagian yang cocok. Coba kata kunci lain.",
+    shortcutTip: "TIP: TEKAN CTRL + K KAPAN SAJA",
+    escapeTip: "ESC UNTUK MENUTUP"
+  },
+  en: {
+    skipNav: "Skip navigation",
+    quickSearch: "Open quick search",
+    chooseLanguage: "Choose language",
+    versionOne: "Return to portfolio version 1",
+    openNavigation: "Open navigation",
+    mainNavigation: "Main navigation",
+    navWork: 'Work <span>01</span>',
+    navSystems: 'Systems <span>02</span>',
+    navProfile: 'Profile <span>03</span>',
+    navToolkit: 'Toolkit <span>04</span>',
+    navResearch: 'Research <span>05</span>',
+    navContact: 'Contact <span>↗</span>',
+    heroTitle: 'Observing systems.<br><em>Building possibilities.</em>',
+    heroCopy: "I'm Samuel, an Information Systems and Technology student at ITBSS. I enjoy understanding how systems work, exploring technology, and turning ideas into projects I can learn from.",
+    heroExplore: 'Explore projects <span>↘</span>',
+    heroMap: 'Explore the system map <span>↓</span>',
+    studyLabel: "STUDY",
+    studyValue: "Information Systems and Technology",
+    exploreArea: "AREAS OF INTEREST",
+    exploreValue: 'Software <i>×</i> Data <i>×</i> Systems',
+    localTime: "LOCAL TIME",
+    labConsole: "Interactive exploration panel",
+    labModes: "Choose an exploration area",
+    currentFocus: "CURRENT FOCUS / 01",
+    statusLabel: "STATUS",
+    learningStatus: "LEARNING IN PROGRESS",
+    summary: "Overview",
+    stripFirst: 'OBSERVE THE PROBLEM — <span>UNDERSTAND THE SYSTEM.</span>',
+    stripSecond: 'MAP / BUILD / REFINE <span>— REPEAT.</span>',
+    workSideNote: "A selection of projects and experiments",
+    workTitle: 'Things I have<br><em>built so far.</em>',
+    workIntro: "From web applications and desktop systems to early-stage experiments. Each project has its own purpose and learning process.",
+    projectFilters: "Project filters",
+    filterAll: 'All <span>07</span>',
+    filterWeb: "Web",
+    filterDesktop: "Desktop",
+    filterResearch: "Research",
+    projectsShown: "PROJECTS SHOWN",
+    illustrationNote: "The visuals on these cards are conceptual illustrations created for this portfolio, not screenshots of running applications.",
+    projectShiye: "A Laravel-based digital storefront and top-up platform. Feature development is paused while business viability is assessed through supplier prices, selling prices, payment costs, margins, and product availability.",
+    projectShiyeFoot: "The main source code is private; no public demo is currently available.",
+    openProject: "Open project details",
+    openProjectText: 'Open project notes <span>↗</span>',
+    projectBukti: "A local-first experiment for reviewing transfer receipt images and surfacing signals for human review. It focuses on transparent analysis rather than claiming to prove that a receipt is fake.",
+    projectKrs: "A desktop application supporting the course registration workflow, schedule selection, conflict checks, academic advisor review, and final approval by the program head.",
+    projectVentra: "A desktop inventory application for recording products, adjusting stock, tracking incoming and outgoing items, and maintaining delivery information.",
+    projectEdu: "A web-based exam scheduling application for managing schedules, teacher activities, question files, user access, and reports.",
+    projectPos: "A web-based point-of-sale application with admin and cashier areas, product and stock management, sales transactions, and transaction history.",
+    projectResearch: "Collaborative research evaluating cloud storage alternatives for IT students using Rank Order Centroid (ROC) weighting and TOPSIS ranking.",
+    viewRepository: 'View repository <span>↗</span>',
+    readPublication: 'Read publication <span>↗</span>',
+    systemSideNote: "Choose a project and explore its workflow",
+    systemsTitle: 'See how<br><em>a system moves.</em>',
+    systemsIntro: "Every project has its own workflow and relationships between components. Choose a case study, then select each stage to explore how the process is structured.",
+    chooseSystemMap: "Choose a system map",
+    flowKrs: "KRS Academic System",
+    flowVentra: "Ventra Inventory",
+    flowBukti: "BuktiScope",
+    interactiveMap: "INTERACTIVE MAP ↗",
+    systemStages: "System workflow stages",
+    flowDisclaimer: "This is a conceptual summary based on the project description, not a live recording of the application.",
+    profileSideNote: "Background, education, and languages",
+    hello: "HELLO, NICE TO MEET YOU.",
+    aboutTitle: 'Systems, data,<br><em>and software.</em>',
+    aboutLead: "I'm an Information Systems and Technology student at Institut Teknologi dan Bisnis Sabda Setia (ITBSS). I'm interested in how systems are designed, how data is managed, and how software can help solve practical problems.",
+    aboutCopy1: "I develop my understanding through coursework, academic projects, teamwork, research, and personal experiments. My current areas of exploration include software development, databases, systems analysis, and user experience.",
+    aboutCopy2: "Outside university, my work experience gives me context about operational workflows, documentation, data management, and coordination between teams. I bring that perspective into my learning about how information systems can support real processes.",
+    aboutCopy3: "I'm still developing my skills. This portfolio aims to distinguish work experience, team projects, and personal experiments honestly.",
+    programLabel: "PROGRAM",
+    areasLabel: "AREAS OF EXPLORATION",
+    locationLabel: "LOCATION",
+    learningLabel: "LEARNING APPROACH",
+    areaValue: "Web apps, desktop apps, and information systems",
+    learningValue: "Projects, experiments, and research",
+    educationTitle: "Education",
+    educationDegree: "Bachelor's · Information Systems and Technology",
+    educationEstimate: "Expected completion: September 2028",
+    highSchoolMajor: "Social Sciences",
+    languagesTitle: "Languages",
+    languageIndonesian: "Indonesian",
+    languageEnglish: "English",
+    languageJapanese: "Japanese",
+    languageMandarin: "Mandarin Chinese",
+    englishNote: "LinkedIn lists my English as Limited Working; the Pearson 3 Skills result I shared was B1+.",
+    membershipTitle: "Membership",
+    membershipName: "Official IMPHNEN Member",
+    membershipNote: "Listed as a membership, not a technical competency certification.",
+    experienceSideNote: "PT Dangau Selaras · Kubu Raya",
+    experienceTitle: 'Learning from processes<br><em>in the real world.</em>',
+    experienceIntro: "My professional experience at PT Dangau Selaras introduced me to operational workflows, documentation, data management, and cross-team coordination. It complements my academic journey in Information Systems and Technology.",
+    experienceRole: "Accounting",
+    experienceIndustry: "Hospitality industry · Kubu Raya, West Kalimantan",
+    operationsFinanceTitle: "Finance & banking operations",
+    operationsFinanceCopy: "Prepare payroll summaries based on working days and HR-provided deductions; prepare payment files through Qlola or bank tellers; monitor incoming transactions and balances across company accounts; and download and review bank statements. Occasionally enter transactions as a Maker within assigned permissions.",
+    operationsArTitle: "Accounts receivable",
+    operationsArCopy: "Record and monitor receivables, coordinate with Marketing on institutional guest payments, review payment evidence, and deliver invoices to the relevant parties.",
+    operationsProcurementTitle: "Procurement & INAPROC",
+    operationsProcurementCopy: "Maintain product listings, process purchases, and upload supporting documents through e-Katalog v6 / INAPROC. Also arrange purchases of electronic signatures (TTE) and electronic stamp duty.",
+    operationsBpjsTitle: "Employee administration & BPJS",
+    operationsBpjsCopy: "Register new employees, deactivate coverage for former employees, update employee and salary data, manage contribution administration, and check BPJS Employment status through SIPP and BPJS Health status through EDABU.",
+    toolkitSideNote: "Tools I have used",
+    toolkitTitle: 'A toolkit <em>that keeps growing.</em>',
+    toolkitIntro: "Technologies and tools from academic projects, work, and personal exploration. My level of experience varies across them.",
+    exploreByArea: "EXPLORE BY AREA",
+    skillFilterNote: "Choose a group to see tools I have used",
+    skillFilters: "Filter tool groups",
+    skillAll: "All",
+    skillWeb: "Web",
+    skillDesktop: "Desktop",
+    skillData: "Data & workflow",
+    skillVisual: "Visual",
+    skillProgramming: "Programming & desktop",
+    skillProgrammingCopy: "Used in programming exercises and university assignments.",
+    skillDatabase: "Database & workflow",
+    skillDatabaseCopy: "Working with data and application workflows.",
+    skillOffice: "Office & data",
+    skillOfficeCopy: "Tools used in administrative work and academic assignments.",
+    skillVisualHeading: "3D & visual exploration",
+    skillVisualCopy: "Creative tools I have used for visual exploration and modelling.",
+    toolkitNote: "This list shows tools I have used; it does not claim professional-level mastery of every item.",
+    researchSideNote: "A published research paper",
+    researchArtBottom: 'ROC × TOPSIS<br>DECISION SUPPORT',
+    researchCopy: "Collaborative research on selecting cloud storage services for IT students, using ROC weighting and TOPSIS to rank alternatives.",
+    contactSideNote: "Open to conversations and collaboration",
+    contactGreeting: "SEE YOU AROUND THE INTERNET.",
+    contactTitle: 'Have an idea?<br><em>Let's connect.</em>',
+    contactCopy: "I enjoy exchanging ideas about technology, projects, learning, and things currently being built.",
+    footerCopy: "Designed and maintained with curiosity.",
+    backTop: "Back to top",
+    closeProject: "Close project details",
+    focusLabel: "FOCUS",
+    contextLabel: "CONTEXT",
+    toolsLabel: "TOOLS & TECHNOLOGIES",
+    openProjectLink: "Open project ↗",
+    searchInput: "Search page sections",
+    searchPlaceholder: "Search page sections...",
+    quickNavigation: "QUICK NAVIGATION",
+    commandWork: '<span>01</span> Projects and work <kbd>↵</kbd>',
+    commandSystems: '<span>02</span> System map <kbd>↵</kbd>',
+    commandProfile: '<span>03</span> Academic profile <kbd>↵</kbd>',
+    commandExperience: '<span>04</span> Professional experience <kbd>↵</kbd>',
+    commandToolkit: '<span>05</span> Toolkit <kbd>↵</kbd>',
+    commandResearch: '<span>06</span> Research and publication <kbd>↵</kbd>',
+    commandContact: '<span>07</span> Contact <kbd>↵</kbd>',
+    commandGithub: '<span>↗</span> GitHub profile <kbd>↵</kbd>',
+    noResults: "No matching sections. Try another keyword.",
+    shortcutTip: "TIP: PRESS CTRL + K ANYTIME",
+    escapeTip: "ESC TO CLOSE"
+  }
+};
+
+const labModesEnglish = {
+  build: {
+    kicker: "CURRENT FOCUS / 01",
+    title: "Building useful software.",
+    copy: "Web and desktop application experiments, from understanding a need to shaping a workflow that people can use.",
+    tags: ["WEB", "DESKTOP", "PROTOTYPES"]
+  },
+  systems: {
+    kicker: "CURRENT FOCUS / 02",
+    title: "Understanding connected systems.",
+    copy: "Exploring how users, processes, data, and rules connect to make an information system work.",
+    tags: ["INFORMATION SYSTEMS", "DATABASES", "WORKFLOWS"]
+  },
+  research: {
+    kicker: "CURRENT FOCUS / 03",
+    title: "Learning through research.",
+    copy: "Developing structured thinking through data, research methods, and academic collaboration.",
+    tags: ["DATA", "ROC", "TOPSIS"]
+  }
+};
+
+const projectNotesEnglish = {
+  shiyestore: {
+    title: "ShiyeStore", context: "PERSONAL PROJECT", status: "BUSINESS REVIEW / DEVELOPMENT PAUSED",
+    description: "A Laravel-based digital storefront and top-up platform. Feature development is paused while business viability is assessed through product availability, supplier prices, selling prices, payment costs, and margins.",
+    focus: "Assessing whether the digital product sales model can sustain healthy margins before feature development resumes.",
+    role: "Personal project. Development has been iterative and is currently at the business evaluation stage.",
+    tech: ["PHP", "Laravel 12", "Vue 3", "Inertia 2", "TypeScript", "Tailwind CSS", "MySQL"], url: ""
+  },
+  buktiscope: {
+    title: "BuktiScope", context: "PERSONAL R&D", status: "EARLY STAGE",
+    description: "A local-first experiment for reviewing transfer receipt images and surfacing signals for human review. It aims to support checking, not to issue an automatic verdict that a receipt is fake.",
+    focus: "Exploring image analysis, OCR, and transparent signals while keeping a human reviewer involved.",
+    role: "Personal project / early-stage R&D experiment.",
+    tech: ["Python", "OCR", "Image Analysis", "FastAPI"], url: "https://github.com/SamuelPhe/BuktiScope"
+  },
+  krs: {
+    title: "KRS Academic System", context: "TEAM PROJECT / SEMESTER 4", status: "ACADEMIC PROJECT",
+    description: "A desktop application supporting student course registration, schedule selection, conflict checks, academic advisor review, and final approval by the program head.",
+    focus: "Understanding an academic workflow involving multiple roles and the way schedule rules and approval stages are connected.",
+    role: "Academic team project. This portfolio describes the application and its workflow; it does not claim that I implemented the entire project alone.",
+    tech: ["Java", "Java Swing", "MySQL", "JDBC"], url: "https://github.com/SamuelPhe/krs_pbo2_semester4"
+  },
+  ventra: {
+    title: "Ventra Inventory", context: "TEAM PROJECT / SEMESTER 3", status: "ACADEMIC PROJECT",
+    description: "A desktop inventory application for recording products, adjusting stock, tracking incoming and outgoing items, and maintaining delivery information.",
+    focus: "Learning about inventory data structures and the relationship between stock changes, item movements, and delivery information.",
+    role: "Academic team project.",
+    tech: ["Java 17", "Java Swing", "MySQL", "Maven"], url: "https://github.com/SamuelPhe/ventra-inventaris-pbo-semester3"
+  },
+  edusched: {
+    title: "EduSched", context: "TEAM PROJECT / SEMESTER 3", status: "ACADEMIC PROJECT",
+    description: "A web-based exam scheduling application for managing schedules, teacher activities, question files, user management, and reports.",
+    focus: "Exploring exam scheduling and the needs of multiple user roles in one web application.",
+    role: "Academic team project.",
+    tech: ["PHP", "MySQL", "JavaScript", "Bootstrap"], url: "https://github.com/SamuelPhe/apsi-semester3"
+  },
+  pos: {
+    title: "Point of Sale", context: "COURSE PROJECT / SEMESTER 2", status: "ACADEMIC PROJECT",
+    description: "A web-based point-of-sale application with admin and cashier areas, product and stock management, sales transactions, and transaction history.",
+    focus: "Learning the sales transaction workflow and product management in a business web application.",
+    role: "University coursework project.",
+    tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"], url: "https://github.com/SamuelPhe/POS-pwd-semester2"
+  },
+  "roc-topsis": {
+    title: "ROC–TOPSIS Decision Support", context: "CO-AUTHORED RESEARCH / TECHBUS 2026", status: "PUBLISHED",
+    description: "Collaborative research evaluating cloud storage alternatives for IT students using Rank Order Centroid (ROC) weighting and TOPSIS ranking.",
+    focus: "Applying a multi-criteria decision-making method to compare cloud storage service alternatives.",
+    role: "Co-author of a research publication with a team.",
+    tech: ["Research", "ROC", "TOPSIS", "Decision Support"], url: "https://doi.org/10.61245/techbus.v4i1.88"
+  }
+};
+
+const workflowMapsEnglish = {
+  krs: {
+    label: "KRS / ACADEMIC WORKFLOW",
+    stages: [
+      { title: "Course registration request", type: "INPUT", actor: "STUDENT", copy: "A student submits a study plan and selects course schedules for the semester." },
+      { title: "Schedule validation", type: "VALIDATION", actor: "SYSTEM", copy: "The selected schedules are checked to help identify conflicts before the request proceeds." },
+      { title: "Academic advisor review", type: "REVIEW", actor: "ACADEMIC ADVISOR", copy: "The academic advisor reviews the student's study plan before it moves to the next stage." },
+      { title: "Program head approval", type: "FINALIZATION", actor: "PROGRAM HEAD", copy: "The program head completes the final approval so the KRS request can be completed and archived." }
+    ]
+  },
+  ventra: {
+    label: "VENTRA / INVENTORY WORKFLOW",
+    stages: [
+      { title: "Product records", type: "DATA INPUT", actor: "INVENTORY STAFF", copy: "Product information is recorded as the foundation for inventory management." },
+      { title: "Stock movements", type: "STOCK ACTIVITY", actor: "INVENTORY STAFF", copy: "Incoming and outgoing items are recorded so stock changes can be traced." },
+      { title: "Stock adjustment", type: "UPDATE", actor: "INVENTORY SYSTEM", copy: "Stock information is updated and linked to the available delivery information." }
+    ]
+  },
+  buktiscope: {
+    label: "BUKTISCOPE / IMAGE REVIEW",
+    stages: [
+      { title: "Image input", type: "INPUT", actor: "USER", copy: "A transfer receipt image is submitted as the material to be reviewed." },
+      { title: "Signal analysis", type: "IMAGE ANALYSIS", actor: "TOOLS", copy: "The experiment checks image and text characteristics to surface relevant signals." },
+      { title: "Human review", type: "HUMAN REVIEW", actor: "REVIEWER", copy: "Signals are shown as supporting information. The final decision still requires human inspection." }
+    ]
+  }
+};
+
+// Apply translations to static content and refresh open, data-driven panels.
+function applyLanguage(language) {
+  currentLanguage = language === "en" ? "en" : "id";
+  const dictionary = translations[currentLanguage];
+  document.documentElement.lang = currentLanguage;
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const value = dictionary[element.dataset.i18n];
+    if (typeof value === "string") element.textContent = value;
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    const value = dictionary[element.dataset.i18nHtml];
+    if (typeof value === "string") element.innerHTML = value;
+  });
+  document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+    const value = dictionary[element.dataset.i18nAria];
+    if (typeof value === "string") element.setAttribute("aria-label", value);
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    const value = dictionary[element.dataset.i18nPlaceholder];
+    if (typeof value === "string") element.setAttribute("placeholder", value);
+  });
+
+  document.querySelectorAll("[data-language]").forEach((button) => {
+    const active = button.dataset.language === currentLanguage;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  const menuOpen = menuToggle?.getAttribute("aria-expanded") === "true";
+  if (menuToggle) {
+    menuToggle.setAttribute("aria-label", menuOpen
+      ? (currentLanguage === "en" ? "Close navigation" : "Tutup navigasi")
+      : dictionary.openNavigation);
+  }
+  if (localTime) updateLocalTime();
+  const activeMode = document.querySelector("[data-lab-mode].is-active")?.dataset.labMode || "build";
+  setLabMode(activeMode);
+  renderFlow(activeFlowKey);
+  if (projectDialog?.open && activeProjectKey) {
+    openProjectNote(activeProjectKey, lastProjectTrigger);
+  }
+  if (commandInput?.value) commandInput.dispatchEvent(new Event("input"));
+
+  document.title = currentLanguage === "en"
+    ? "Samuel Phe — Personal Systems Lab"
+    : "Samuel Phe — Personal Systems Lab";
+  const description = document.querySelector('meta[name="description"]');
+  if (description) description.content = currentLanguage === "en"
+    ? "Samuel Phe's Personal Systems Lab, an Information Systems and Technology student portfolio. Explore software projects, system maps, experiments, and research."
+    : "Personal Systems Lab milik Samuel Phe, mahasiswa Sistem dan Teknologi Informasi. Jelajahi proyek software, system map, eksperimen, dan riset.";
+
+  try { localStorage.setItem("portfolio-language", currentLanguage); } catch { /* Storage can be unavailable in private browsing. */ }
+}
+
+document.querySelectorAll("[data-language]").forEach((button) => {
+  button.addEventListener("click", () => applyLanguage(button.dataset.language));
+});
+
+let preferredLanguage = "id";
+try {
+  const savedLanguage = localStorage.getItem("portfolio-language");
+  if (savedLanguage === "en" || savedLanguage === "id") preferredLanguage = savedLanguage;
+} catch { /* Keep Indonesian as the default when storage is unavailable. */ }
+applyLanguage(preferredLanguage);
 
