@@ -28,7 +28,7 @@
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="Samuel Phe, kembali ke atas">
       <span class="brand-mark">S<span>.</span></span>
-      <span class="brand-name">SAMUEL PHE<small>PERSONAL ARCHIVE / 2026</small></span>
+      <span class="brand-name">SAMUEL PHE<small>PERSONAL SYSTEMS LAB / 2026</small></span>
     </a>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Buka navigasi">
@@ -37,9 +37,10 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
       <a href="#work">Karya <span>01</span></a>
-      <a href="#about">Tentang <span>02</span></a>
-      <a href="#toolkit">Toolkit <span>03</span></a>
-      <a href="#notes">Riset <span>04</span></a>
+      <a href="#systems">Systems <span>02</span></a>
+      <a href="#about">Profil <span>03</span></a>
+      <a href="#toolkit">Toolkit <span>04</span></a>
+      <a href="#notes">Riset <span>05</span></a>
       <a class="nav-contact" href="#contact">Kontak <span>↗</span></a>
     </nav>
 
@@ -50,7 +51,7 @@
   </header>
 
   <main id="main">
-    <section class="hero-section" aria-labelledby="hero-title">
+    <section class="hero-section systems-hero" aria-labelledby="hero-title">
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-orbit orbit-one" aria-hidden="true"></div>
       <div class="hero-orbit orbit-two" aria-hidden="true"></div>
@@ -58,44 +59,49 @@
       <div class="hero-cross cross-two" aria-hidden="true">✳</div>
 
       <div class="hero-content">
-        <div class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> PORTOFOLIO DIGITAL / SAMUEL PHE</div>
-        <h1 id="hero-title">Belajar lewat ide.<br><em>Berkembang</em> lewat proyek.</h1>
-        <p class="hero-copy">Saya Samuel. Mahasiswa Sistem dan Teknologi Informasi yang senang memahami cara kerja sesuatu, lalu mencoba membangunnya menjadi aplikasi yang berguna.</p>
+        <div class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> PERSONAL SYSTEMS LAB / SAMUEL PHE</div>
+        <h1 id="hero-title">Mengamati sistem.<br><em>Membangun kemungkinan.</em></h1>
+        <p class="hero-copy">Saya Samuel, mahasiswa Sistem dan Teknologi Informasi di ITBSS. Saya senang memahami bagaimana sebuah sistem bekerja, mengeksplorasi teknologi, dan mengubah ide menjadi proyek yang bisa dipelajari.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#work">Jelajahi proyek <span>↘</span></a>
-          <a class="text-link light-link" href="#about">Kenali saya <span>↓</span></a>
+          <a class="text-link light-link" href="#systems">Lihat system map <span>↓</span></a>
         </div>
 
         <div class="hero-bottomline">
-          <div><span class="micro-label">BERBASIS DI</span><strong>Sungai Raya, Indonesia</strong></div>
-          <div><span class="micro-label">PERAN SAAT INI</span><strong>Student <i>×</i> Accounting Staff</strong></div>
-          <div><span class="micro-label">WAKTU LOKAL</span><strong id="local-time">--:--:-- WIB</strong></div>
+          <div><span class="micro-label">STUDI</span><strong>Sistem dan Teknologi Informasi</strong></div>
+          <div><span class="micro-label">AREA EKSPLORASI</span><strong>Software <i>×</i> Data <i>×</i> Systems</strong></div>
+          <div><span class="micro-label">WAKTU LOKAL</span><strong id="local-time">--:-- WIB</strong></div>
         </div>
       </div>
 
-      <aside class="identity-card" aria-label="Ringkasan aktivitas">
-        <div class="identity-card-top"><span>FIELD NOTES / 001</span><span class="live-mark"><i></i> ACTIVE</span></div>
-        <div class="identity-symbol" aria-hidden="true">
-          <span class="symbol-ring ring-a"></span>
-          <span class="symbol-ring ring-b"></span>
-          <span class="symbol-core">S.</span>
-          <span class="symbol-spark">✳</span>
+      <aside class="lab-console" aria-label="Panel eksplorasi interaktif">
+        <div class="console-topbar">
+          <span><i></i> SYSTEMS LAB / CONSOLE</span>
+          <span>SESSION 001</span>
         </div>
-        <div class="identity-card-body">
-          <span class="micro-label">CURRENTLY EXPLORING</span>
-          <h2>Web systems<br>& practical tools.</h2>
-          <p>Mengubah rasa ingin tahu menjadi eksperimen kecil, lalu belajar dari prosesnya.</p>
+        <div class="console-body">
+          <div class="lab-mode-list" role="group" aria-label="Pilih area eksplorasi">
+            <button type="button" class="lab-mode is-active" data-lab-mode="build" aria-pressed="true"><span>01</span> BUILD</button>
+            <button type="button" class="lab-mode" data-lab-mode="systems" aria-pressed="false"><span>02</span> SYSTEMS</button>
+            <button type="button" class="lab-mode" data-lab-mode="research" aria-pressed="false"><span>03</span> RESEARCH</button>
+          </div>
+          <div class="lab-display" aria-live="polite">
+            <span class="console-label" id="lab-mode-kicker">CURRENT FOCUS / 01</span>
+            <h2 id="lab-mode-title">Building useful software.</h2>
+            <p id="lab-mode-copy">Eksperimen aplikasi web dan desktop, dari memahami kebutuhan hingga mencoba membangun alur yang bisa digunakan.</p>
+            <div class="console-tags" id="lab-mode-tags"><span>WEB</span><span>DESKTOP</span><span>PROTOTYPE</span></div>
+          </div>
+          <div class="console-foot"><span>STATUS</span><b><i></i> LEARNING IN PROGRESS</b></div>
         </div>
-        <div class="identity-card-foot"><span>WEST KALIMANTAN</span><span>INDONESIA / UTC+7</span></div>
       </aside>
 
-      <div class="hero-index" aria-hidden="true">INDEPENDENT<br>BY CURIOSITY <span>✳</span></div>
+      <div class="hero-index" aria-hidden="true">CURIOSITY<br>INTO SYSTEMS <span>✳</span></div>
     </section>
 
     <section class="intro-strip" aria-label="Ringkasan">
-      <p>BUKAN SEKADAR MENULIS KODE — <span>SAYA SEDANG BELAJAR MEMECAHKAN MASALAH.</span></p>
+      <p>OBSERVE THE PROBLEM — <span>UNDERSTAND THE SYSTEM.</span></p>
       <div class="strip-mark">✳</div>
-      <p>BUILD / LEARN / REFINE <span>— REPEAT.</span></p>
+      <p>MAP / BUILD / REFINE <span>— REPEAT.</span></p>
     </section>
 
     <section class="work-section section-pad" id="work" aria-labelledby="work-title">
