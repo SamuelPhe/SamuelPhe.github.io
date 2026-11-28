@@ -945,9 +945,7 @@ function applyLanguage(language) {
   try { localStorage.setItem("portfolio-language", currentLanguage); } catch { /* Storage can be unavailable in private browsing. */ }
 }
 
-document.querySelectorAll("[data-language]").forEach((button) => {
-  button.addEventListener("click", () => applyLanguage(button.dataset.language));
-});
+window.setPortfolioLanguage = applyLanguage;
 
 let preferredLanguage = "id";
 try {
