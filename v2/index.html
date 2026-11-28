@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261128-contrast-i18n-3">
-  <script src="script.js?v=20261128-contrast-i18n-3" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261128-contrast-i18n-4">
+  <script src="script.js?v=20261128-contrast-i18n-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skipNav">Lewati navigasi</a>
@@ -47,7 +47,7 @@
     <button class="command-trigger" type="button" data-open-command aria-label="Buka pencarian cepat" data-i18n-aria="quickSearch">
       <span>⌕</span><kbd>CTRL K</kbd>
     </button>
-    <div class="header-tools"><div class="language-switch" role="group" aria-label="Pilih bahasa" data-i18n-aria="chooseLanguage"><button type="button" id="language-id" class="language-option is-active" data-language="id" aria-pressed="true">ID</button><button type="button" id="language-en" class="language-option" data-language="en" aria-pressed="false">EN</button></div><a class="version-switch" href="/" aria-label="Kembali ke portofolio versi 1" data-i18n-aria="versionOne">V1 <span aria-hidden="true">↗</span></a></div>
+    <div class="header-tools"><div class="language-switch" role="group" aria-label="Pilih bahasa" data-i18n-aria="chooseLanguage"><button type="button" id="language-id" class="language-option is-active" data-language="id" aria-pressed="true" onclick="window.setPortfolioLanguage('id')">ID</button><button type="button" id="language-en" class="language-option" data-language="en" aria-pressed="false" onclick="window.setPortfolioLanguage('en')">EN</button></div><a class="version-switch" href="/" aria-label="Kembali ke portofolio versi 1" data-i18n-aria="versionOne">V1 <span aria-hidden="true">↗</span></a></div>
   </header>
 
   <main id="main">
