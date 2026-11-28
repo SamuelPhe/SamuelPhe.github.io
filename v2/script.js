@@ -611,7 +611,18 @@ const translations = {
     commandGithub: '<span>↗</span> GitHub profile <kbd>↵</kbd>',
     noResults: "Tidak ada bagian yang cocok. Coba kata kunci lain.",
     shortcutTip: "TIP: TEKAN CTRL + K KAPAN SAJA",
-    escapeTip: "ESC UNTUK MENUTUP"
+    escapeTip: "ESC UNTUK MENUTUP",
+    researchArtKicker: "RISET / 2026",
+    researchOverline: "PENULIS BERSAMA · TECHBUS VOL. 4 NO. 1",
+    experiencePeriod: "MEI 2024 — SEKARANG",
+    educationEyebrow: "PENDIDIKAN / 01",
+    academicLabel: "AKADEMIK",
+    languagesEyebrow: "BAHASA / 02",
+    communicationLabel: "KOMUNIKASI",
+    communityEyebrow: "KOMUNITAS / 03",
+    membershipLabel: "KEANGGOTAAN",
+    skillWebHeading: "Web development",
+    skillWebCopy: "Digunakan dalam proyek web dan aplikasi personal."
   },
   en: {
     skipNav: "Skip navigation",
@@ -761,7 +772,18 @@ const translations = {
     commandGithub: '<span>↗</span> GitHub profile <kbd>↵</kbd>',
     noResults: "No matching sections. Try another keyword.",
     shortcutTip: "TIP: PRESS CTRL + K ANYTIME",
-    escapeTip: "ESC TO CLOSE"
+    escapeTip: "ESC TO CLOSE",
+    researchArtKicker: "RESEARCH / 2026",
+    researchOverline: "CO-AUTHOR · TECHBUS VOL. 4 NO. 1",
+    experiencePeriod: "MAY 2024 — PRESENT",
+    educationEyebrow: "EDUCATION / 01",
+    academicLabel: "ACADEMIC",
+    languagesEyebrow: "LANGUAGES / 02",
+    communicationLabel: "COMMUNICATION",
+    communityEyebrow: "COMMUNITY / 03",
+    membershipLabel: "MEMBERSHIP",
+    skillWebHeading: "Web development",
+    skillWebCopy: "Used in web projects and personal applications."
   }
 };
 
