@@ -1,6 +1,6 @@
-# Samuel Phe — Portfolio v2
+# Samuel Phe — Personal Systems Lab
 
-An alternate personal portfolio site, published separately from the original homepage.
+An interactive personal portfolio built around a systems-lab theme, published separately from the original homepage.
 
 - **Live path (after GitHub Pages finishes publishing):** https://samuelphe.github.io/v2/
 - **Original portfolio:** https://samuelphe.github.io/
@@ -13,7 +13,10 @@ This version uses an original editorial direction: warm paper surfaces, deep cha
 ## Features
 
 - Responsive navigation for desktop and mobile
-- Project filters (All, Web, Desktop, Research)
+- Interactive hero console with Build, Systems, and Research focus modes
+- Project explorer with detail dialogs and grounded project notes
+- Interactive conceptual system maps for KRS, Ventra, and BuktiScope
+- Skill explorer with filters for Web, Desktop, Data, and Visual tools
 - Keyboard command palette using `Ctrl/Cmd + K`, with arrow-key navigation and an empty-search state
 - Local time display for West Kalimantan (Asia/Pontianak)
 - Scroll reveal effects with reduced-motion support
@@ -23,7 +26,7 @@ This version uses an original editorial direction: warm paper surfaces, deep cha
 
 Update the content in `index.html`, presentation in `styles.css`, and interactions in `script.js`. All illustrations are drawn with CSS and HTML; no third-party project screenshots are embedded.
 
-The original root-level `index.html` and `portofolio.html` remain the V1 experience and include links to switch to V2. The V2 header links back to the original homepage.
+The original root-level `index.html` and `portofolio.html` remain the V1 experience and include links to switch to V2. The V2 header links back to the original homepage. V2 presents Samuel primarily as a Sistem dan Teknologi Informasi student; work experience is included as additional context rather than the central identity.
 
 
 ## Profile information
