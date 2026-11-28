@@ -147,6 +147,7 @@
             <p>Platform storefront dan top-up digital berbasis Laravel. Pengembangan fitur sedang dijeda untuk menilai kelayakan bisnis melalui harga pemasok, harga jual, biaya pembayaran, margin, dan ketersediaan produk.</p>
             <div class="tech-list"><span>PHP</span><span>Laravel 12</span><span>Vue 3</span><span>Inertia 2</span><span>TypeScript</span><span>Tailwind CSS</span><span>MySQL</span></div>
             <p class="project-footnote">Source code utama bersifat privat; belum ada demo publik yang disiapkan.</p>
+            <button class="project-explore" type="button" data-project-open="shiyestore" aria-label="Buka detail shiyestore">Buka catatan proyek <span>↗</span></button>
           </div>
         </article>
 
@@ -174,6 +175,7 @@
             <p>Eksperimen local-first untuk memeriksa gambar bukti transfer dan menampilkan sinyal yang layak ditinjau manusia. Fokusnya transparansi analisis, bukan klaim deteksi palsu yang pasti.</p>
             <div class="tech-list"><span>Python</span><span>OCR</span><span>Image Analysis</span><span>FastAPI</span></div>
             <a class="project-link" href="https://github.com/SamuelPhe/BuktiScope" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+            <button class="project-explore" type="button" data-project-open="buktiscope" aria-label="Buka detail buktiscope">Buka catatan proyek <span>↗</span></button>
           </div>
         </article>
 
@@ -196,6 +198,7 @@
             <p>Aplikasi desktop untuk alur pengajuan KRS, pemilihan jadwal, pemeriksaan bentrok, peninjauan Dosen PA, dan finalisasi oleh Kaprodi.</p>
             <div class="tech-list"><span>Java</span><span>Java Swing</span><span>MySQL</span><span>JDBC</span></div>
             <a class="project-link" href="https://github.com/SamuelPhe/krs_pbo2_semester4" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+            <button class="project-explore" type="button" data-project-open="krs" aria-label="Buka detail krs">Buka catatan proyek <span>↗</span></button>
           </div>
         </article>
 
@@ -215,6 +218,7 @@
             <p>Aplikasi inventaris desktop untuk pencatatan produk, penyesuaian stok, barang masuk dan keluar, serta informasi pengiriman.</p>
             <div class="tech-list"><span>Java 17</span><span>Java Swing</span><span>MySQL</span><span>Maven</span></div>
             <a class="project-link" href="https://github.com/SamuelPhe/ventra-inventaris-pbo-semester3" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+            <button class="project-explore" type="button" data-project-open="ventra" aria-label="Buka detail ventra">Buka catatan proyek <span>↗</span></button>
           </div>
         </article>
 
@@ -233,6 +237,7 @@
             <p>Aplikasi web penjadwalan ujian untuk mengatur jadwal, aktivitas guru, berkas soal, manajemen pengguna, dan laporan.</p>
             <div class="tech-list"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
             <a class="project-link" href="https://github.com/SamuelPhe/apsi-semester3" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+            <button class="project-explore" type="button" data-project-open="edusched" aria-label="Buka detail edusched">Buka catatan proyek <span>↗</span></button>
           </div>
         </article>
 
@@ -254,6 +259,7 @@
             <p>Aplikasi kasir berbasis web dengan area admin dan kasir, manajemen produk dan stok, transaksi penjualan, serta riwayat transaksi.</p>
             <div class="tech-list"><span>PHP</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
             <a class="project-link" href="https://github.com/SamuelPhe/POS-pwd-semester2" target="_blank" rel="noopener noreferrer">Lihat repository <span>↗</span></a>
+            <button class="project-explore" type="button" data-project-open="pos" aria-label="Buka detail pos">Buka catatan proyek <span>↗</span></button>
           </div>
         </article>
 
@@ -273,6 +279,7 @@
             <p>Penelitian kolaboratif untuk mengevaluasi alternatif layanan penyimpanan cloud bagi mahasiswa IT melalui pembobotan ROC dan pemeringkatan TOPSIS.</p>
             <div class="tech-list"><span>Research</span><span>ROC</span><span>TOPSIS</span><span>Decision Support</span></div>
             <a class="project-link" href="https://doi.org/10.61245/techbus.v4i1.88" target="_blank" rel="noopener noreferrer">Baca publikasi <span>↗</span></a>
+            <button class="project-explore" type="button" data-project-open="roc-topsis" aria-label="Buka detail roc-topsis">Buka catatan proyek <span>↗</span></button>
           </div>
         </article>
       </div>
@@ -281,27 +288,64 @@
       <div class="work-bottomline"><span>END OF CURRENT SELECTION</span><span>MORE TO LEARN, MORE TO BUILD <b>↗</b></span></div>
     </section>
 
+    <section class="system-map-section section-pad" id="systems" aria-labelledby="systems-title">
+      <div class="section-topline">
+        <span class="section-index">02 / SYSTEMS IN MOTION</span>
+        <span class="section-side-note">Pilih proyek, telusuri alurnya</span>
+      </div>
+      <div class="section-heading-row">
+        <div><h2 id="systems-title">Lihat bagaimana<br><em>sebuah sistem bergerak.</em></h2></div>
+        <p>Setiap proyek memiliki alur dan hubungan antarbagian. Pilih salah satu studi kasus, lalu buka setiap tahap untuk melihat gambaran prosesnya.</p>
+      </div>
+      <div class="flow-explorer">
+        <div class="flow-selector" role="group" aria-label="Pilih system map">
+          <button class="flow-project is-active" type="button" data-flow-project="krs" aria-pressed="true"><span>01</span><b>KRS Academic System</b><small>DESKTOP / ACADEMIC</small></button>
+          <button class="flow-project" type="button" data-flow-project="ventra" aria-pressed="false"><span>02</span><b>Ventra Inventory</b><small>DESKTOP / INVENTORY</small></button>
+          <button class="flow-project" type="button" data-flow-project="buktiscope" aria-pressed="false"><span>03</span><b>BuktiScope</b><small>R&amp;D / IMAGE REVIEW</small></button>
+        </div>
+        <div class="flow-workspace">
+          <div class="flow-workspace-top"><span id="flow-project-label">KRS / ACADEMIC WORKFLOW</span><span>INTERACTIVE MAP ↗</span></div>
+          <div class="flow-stage-list" id="flow-stage-list" aria-label="Tahapan alur sistem">
+            <button class="flow-stage is-active" type="button" data-flow-stage="0" aria-pressed="true"><span>01</span><b>Pengajuan KRS</b><i>→</i></button>
+            <button class="flow-stage" type="button" data-flow-stage="1" aria-pressed="false"><span>02</span><b>Pemeriksaan jadwal</b><i>→</i></button>
+            <button class="flow-stage" type="button" data-flow-stage="2" aria-pressed="false"><span>03</span><b>Peninjauan Dosen PA</b><i>→</i></button>
+            <button class="flow-stage" type="button" data-flow-stage="3" aria-pressed="false"><span>04</span><b>Finalisasi Kaprodi</b><i>↗</i></button>
+          </div>
+          <article class="flow-inspector" aria-live="polite">
+            <div class="flow-inspector-mark">01</div>
+            <div>
+              <span class="console-label" id="flow-stage-label">TAHAP 01 / INPUT</span>
+              <h3 id="flow-stage-title">Pengajuan KRS</h3>
+              <p id="flow-stage-copy">Mahasiswa mengajukan rencana studi dan memilih jadwal mata kuliah untuk satu semester.</p>
+              <span class="flow-inspector-note" id="flow-stage-note">AKTOR UTAMA · MAHASISWA</span>
+            </div>
+          </article>
+          <p class="flow-disclaimer">Peta ini merupakan ringkasan konseptual berdasarkan deskripsi proyek, bukan rekaman proses aplikasi secara langsung.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="about-section section-pad" id="about" aria-labelledby="about-title">
       <div class="section-topline">
-        <span class="section-index">02 / A LITTLE ABOUT ME</span>
+        <span class="section-index">03 / THE EXPLORER</span>
         <span class="section-side-note">Latar belakang, pendidikan, dan bahasa</span>
       </div>
       <div class="about-layout">
         <div class="about-heading">
           <span class="overline">HALO, SENANG BERTEMU.</span>
-          <h2 id="about-title">Akuntansi,<br><em>administrasi & teknologi.</em></h2>
+          <h2 id="about-title">Sistem, data,<br><em>dan software.</em></h2>
           <div class="about-seal" aria-hidden="true"><span>CURIOUS<br>BY NATURE</span><b>✳</b></div>
         </div>
         <div class="about-copy">
-          <p class="about-lead">Saya mahasiswa Sistem dan Teknologi Informasi di Institut Teknologi dan Bisnis Sabda Setia (ITBSS), sekaligus bekerja sebagai staf akuntansi dan administrasi di PT Dangau Selaras.</p>
-          <p>Dalam pekerjaan, saya mendukung proses keuangan dan perbankan, penggajian, pemantauan piutang, pengadaan, serta administrasi kepesertaan BPJS. Pengalaman ini membentuk kebiasaan kerja yang teliti, terstruktur, dan dekat dengan pengelolaan data serta dokumen.</p>
-          <p>Di bidang teknologi informasi, saya terus belajar melalui perkuliahan, penelitian kolaboratif, dan proyek akademik maupun personal. Fokus eksplorasi saya mencakup pengembangan software, basis data, analisis data, dan pembuatan aplikasi yang membantu menyelesaikan masalah praktis.</p>
+          <p class="about-lead">Saya mahasiswa Sistem dan Teknologi Informasi di Institut Teknologi dan Bisnis Sabda Setia (ITBSS). Saya tertarik memahami bagaimana sistem dirancang, bagaimana data dikelola, dan bagaimana software dapat membantu menyelesaikan masalah praktis.</p>
+          <p>Saya mengembangkan pemahaman melalui perkuliahan, proyek akademik, kerja tim, penelitian, dan eksperimen personal. Area yang sedang saya eksplorasi meliputi software development, basis data, analisis sistem, serta pengalaman pengguna.</p>
+          <p>Di luar kampus, pengalaman kerja memberi saya konteks tentang alur operasional, dokumentasi, pengelolaan data, dan koordinasi antarbagian. Saya membawa sudut pandang tersebut saat mempelajari bagaimana sistem informasi bisa mendukung proses nyata.</p>
           <p>Saya masih dalam proses membangun kompetensi. Karena itu, portofolio ini berusaha membedakan pengalaman kerja, proyek tim, dan eksperimen pribadi secara jujur.</p>
           <div class="about-details">
-            <div><span class="micro-label">PENDIDIKAN</span><strong>Sarjana Sistem dan Teknologi Informasi</strong><small>ITBSS · Agustus 2024–September 2028</small></div>
-            <div><span class="micro-label">PENGALAMAN</span><strong>Accounting · PT Dangau Selaras</strong><small>Mei 2024–sekarang · Kubu Raya</small></div>
+            <div><span class="micro-label">PROGRAM STUDI</span><strong>Sistem dan Teknologi Informasi</strong><small>ITBSS · 2024–2028</small></div>
+            <div><span class="micro-label">AREA EKSPLORASI</span><strong>Software & information systems</strong><small>Aplikasi web, desktop, dan sistem informasi</small></div>
             <div><span class="micro-label">LOKASI</span><strong>Pontianak, Kalimantan Barat</strong><small>Indonesia · UTC+7</small></div>
-            <div><span class="micro-label">FOKUS</span><strong>Software & administrasi keuangan</strong><small>Pengembangan sistem dan proses bisnis</small></div>
+            <div><span class="micro-label">CARA BELAJAR</span><strong>Build · Analyze · Improve</strong><small>Proyek, eksperimen, dan penelitian</small></div>
           </div>
         </div>
       </div>
@@ -350,14 +394,14 @@
 
     <section class="operations-section section-pad" id="experience" aria-labelledby="operations-title">
       <div class="section-topline">
-        <span class="section-index">03 / PROFESSIONAL EXPERIENCE</span>
+        <span class="section-index">04 / FIELD EXPERIENCE</span>
         <span class="section-side-note">PT Dangau Selaras · Kubu Raya</span>
       </div>
       <div class="operations-layout">
         <div>
           <span class="experience-period">MEI 2024 — SEKARANG</span>
-          <h2 id="operations-title">Menjaga proses<br><em>di balik operasional.</em></h2>
-          <p class="operations-intro">Saya bekerja di bidang akuntansi dengan cakupan tugas yang juga bersinggungan dengan administrasi, pengadaan, perbankan, dan data kepegawaian.</p>
+          <h2 id="operations-title">Belajar dari proses<br><em>di dunia nyata.</em></h2>
+          <p class="operations-intro">Pengalaman profesional di PT Dangau Selaras memperkenalkan saya pada alur operasional, dokumentasi, pengelolaan data, dan koordinasi antarbagian. Bagian ini melengkapi perjalanan akademik saya di bidang Sistem dan Teknologi Informasi.</p>
           <div class="experience-role">
             <b>Accounting</b>
             <span>PT Dangau Selaras</span>
@@ -375,35 +419,45 @@
 
     <section class="toolkit-section section-pad" id="toolkit" aria-labelledby="toolkit-title">
       <div class="section-topline">
-        <span class="section-index">04 / TOOLS & TECHNOLOGIES</span>
+        <span class="section-index">05 / TOOLBOX</span>
         <span class="section-side-note">Yang pernah saya gunakan</span>
       </div>
       <div class="section-heading-row">
         <h2 id="toolkit-title">Toolkit <em>yang terus tumbuh.</em></h2>
         <p>Teknologi dan tools dari proyek akademik, pekerjaan, dan eksplorasi personal. Tingkat pengalaman tiap alat tidak sama.</p>
       </div>
+      <div class="skill-explorer">
+        <div class="skill-explorer-heading"><span>EXPLORE BY AREA</span><small>Pilih kelompok untuk melihat tools yang pernah saya gunakan</small></div>
+        <div class="skill-filter-list" role="group" aria-label="Filter kelompok tools">
+          <button type="button" class="skill-filter is-active" data-skill-filter="all" aria-pressed="true">Semua</button>
+          <button type="button" class="skill-filter" data-skill-filter="web" aria-pressed="false">Web</button>
+          <button type="button" class="skill-filter" data-skill-filter="desktop" aria-pressed="false">Desktop</button>
+          <button type="button" class="skill-filter" data-skill-filter="data" aria-pressed="false">Data &amp; workflow</button>
+          <button type="button" class="skill-filter" data-skill-filter="creative" aria-pressed="false">Visual</button>
+        </div>
+      </div>
       <div class="toolkit-grid">
-        <article class="toolkit-card">
+        <article class="toolkit-card" data-skill-group="web">
           <span class="toolkit-number">01</span>
           <div><h3>Web development</h3><p>Digunakan dalam proyek web dan aplikasi personal.</p></div>
           <div class="tool-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span><span>Vue 3</span><span>Inertia.js</span><span>Bootstrap</span></div>
         </article>
-        <article class="toolkit-card">
+        <article class="toolkit-card" data-skill-group="desktop">
           <span class="toolkit-number">02</span>
           <div><h3>Programming & desktop</h3><p>Dipakai dalam latihan pemrograman dan tugas kuliah.</p></div>
           <div class="tool-tags"><span>Java</span><span>Java Swing</span><span>Python</span><span>C++</span><span>OOP</span><span>Maven</span></div>
         </article>
-        <article class="toolkit-card">
+        <article class="toolkit-card" data-skill-group="data">
           <span class="toolkit-number">03</span>
           <div><h3>Database & workflow</h3><p>Pengelolaan data dan alur kerja aplikasi.</p></div>
           <div class="tool-tags"><span>MySQL</span><span>SQL</span><span>JDBC</span><span>Git</span><span>GitHub</span><span>VS Code</span></div>
         </article>
-        <article class="toolkit-card">
+        <article class="toolkit-card" data-skill-group="data">
           <span class="toolkit-number">04</span>
           <div><h3>Office & data</h3><p>Tools yang digunakan pada pekerjaan administrasi dan tugas akademik.</p></div>
           <div class="tool-tags"><span>Excel</span><span>Google Sheets</span><span>Word</span><span>PowerPoint</span><span>SPSS</span><span>Mendeley</span></div>
         </article>
-        <article class="toolkit-card">
+        <article class="toolkit-card" data-skill-group="creative">
           <span class="toolkit-number">05</span>
           <div><h3>3D & visual exploration</h3><p>Tools kreatif yang pernah digunakan untuk eksplorasi visual dan pemodelan.</p></div>
           <div class="tool-tags"><span>Blender</span></div>
@@ -414,7 +468,7 @@
 
     <section class="notes-section section-pad" id="notes" aria-labelledby="notes-title">
       <div class="section-topline">
-        <span class="section-index">05 / NOTES & RESEARCH</span>
+        <span class="section-index">06 / RESEARCH NOTES</span>
         <span class="section-side-note">Satu catatan yang dipublikasikan</span>
       </div>
       <div class="research-card">
@@ -436,7 +490,7 @@
     <section class="contact-section section-pad" id="contact" aria-labelledby="contact-title">
       <div class="contact-decoration" aria-hidden="true">✳</div>
       <div class="section-topline">
-        <span class="section-index">06 / SAY HELLO</span>
+        <span class="section-index">07 / CONNECT</span>
         <span class="section-side-note">Terbuka untuk percakapan dan kolaborasi</span>
       </div>
       <div class="contact-content">
@@ -460,17 +514,36 @@
     <a class="back-top" href="#top" aria-label="Kembali ke atas">↑</a>
   </footer>
 
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+    <div class="project-dialog-shell">
+      <div class="project-dialog-top"><span id="project-dialog-context">PROJECT FIELD NOTE</span><button type="button" class="dialog-close" data-close-project aria-label="Tutup detail proyek">×</button></div>
+      <div class="project-dialog-main">
+        <span class="console-label" id="project-dialog-status">PROJECT / DETAIL</span>
+        <h2 id="project-dialog-title">Project title</h2>
+        <p class="project-dialog-description" id="project-dialog-description"></p>
+        <div class="project-dialog-grid">
+          <div><span class="micro-label">FOCUS</span><p id="project-dialog-focus"></p></div>
+          <div><span class="micro-label">CONTEXT</span><p id="project-dialog-role"></p></div>
+        </div>
+        <div class="project-dialog-tech-wrap"><span class="micro-label">TOOLS &amp; TECHNOLOGIES</span><div class="project-dialog-tech" id="project-dialog-tech"></div></div>
+        <a class="button button-primary project-dialog-link" id="project-dialog-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Open project ↗</a>
+      </div>
+      <div class="project-dialog-bottom"><span>PERSONAL SYSTEMS LAB / FIELD NOTES</span><span>ESC TO CLOSE</span></div>
+    </div>
+  </dialog>
+
   <dialog class="command-dialog" id="command-dialog" aria-labelledby="command-title">
     <div class="command-box">
       <div class="command-heading"><span id="command-title">QUICK NAVIGATION</span><kbd>ESC</kbd></div>
       <label class="command-input-wrap"><span>⌕</span><input id="command-input" type="search" aria-label="Cari bagian halaman" placeholder="Cari bagian halaman..." autocomplete="off"></label>
       <div class="command-results" id="command-results" role="list">
         <a href="#work"><span>01</span> Karya dan proyek <kbd>↵</kbd></a>
-        <a href="#about"><span>02</span> Tentang saya <kbd>↵</kbd></a>
-        <a href="#experience"><span>03</span> Pengalaman kerja <kbd>↵</kbd></a>
-        <a href="#toolkit"><span>04</span> Toolkit <kbd>↵</kbd></a>
-        <a href="#notes"><span>05</span> Riset dan publikasi <kbd>↵</kbd></a>
-        <a href="#contact"><span>06</span> Kontak <kbd>↵</kbd></a>
+        <a href="#systems"><span>02</span> System map <kbd>↵</kbd></a>
+        <a href="#about"><span>03</span> Profil akademik <kbd>↵</kbd></a>
+        <a href="#experience"><span>04</span> Pengalaman profesional <kbd>↵</kbd></a>
+        <a href="#toolkit"><span>05</span> Toolkit <kbd>↵</kbd></a>
+        <a href="#notes"><span>06</span> Riset dan publikasi <kbd>↵</kbd></a>
+        <a href="#contact"><span>07</span> Kontak <kbd>↵</kbd></a>
         <a href="https://github.com/SamuelPhe" target="_blank" rel="noopener noreferrer"><span>↗</span> GitHub profile <kbd>↵</kbd></a>
       </div>
       <p class="command-no-results" id="command-no-results" role="status" hidden>Tidak ada bagian yang cocok. Coba kata kunci lain.</p>
