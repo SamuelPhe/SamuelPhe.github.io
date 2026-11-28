@@ -30,6 +30,33 @@ if (menuToggle && mainNav) {
   });
 }
 
+// Highlight the navigation item for the section currently crossing the viewport.
+const navLinks = mainNav ? [...mainNav.querySelectorAll('a[href^="#"]')] : [];
+const navSections = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+function setActiveNav(sectionId) {
+  navLinks.forEach((link) => {
+    if (link.hash === `#${sectionId}`) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+const initialNavTarget = navLinks.find((link) => link.hash === window.location.hash);
+if (initialNavTarget) setActiveNav(initialNavTarget.hash.slice(1));
+navLinks.forEach((link) => link.addEventListener("click", () => setActiveNav(link.hash.slice(1))));
+
+if ("IntersectionObserver" in window && navSections.length) {
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) setActiveNav(entry.target.id);
+    });
+  }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
+
+  navSections.forEach((section) => navObserver.observe(section));
+}
+
 const filterButtons = [...document.querySelectorAll("[data-filter]")];
 const projectCards = [...document.querySelectorAll(".project-card[data-category]")];
 const visibleCount = document.getElementById("visible-count");
